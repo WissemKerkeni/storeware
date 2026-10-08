@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-primary":"#00363a","on-tertiary-fixed-variant":"#004c69","primary":"#dbfcff","secondary":"#c0c1ff","tertiary":"#eef7ff","on-secondary-fixed-variant":"#2f2ebe","on-surface":"#dfe2ef","secondary-container":"#3131c0","outline":"#849495","on-primary-container":"#006970","inverse-surface":"#dfe2ef","surface-dim":"#0f131c","on-surface-variant":"#b9cacb","surface":"#0f131c","tertiary-container":"#aee0ff","on-secondary":"#1000a9","surface-bright":"#353943","tertiary-fixed-dim":"#7bd0ff","surface-container-highest":"#31353f","surface-container-lowest":"#0a0e17","error":"#ffb4ab","on-error-container":"#ffdad6","background":"#0f131c","surface-container-low":"#181b25","on-secondary-container":"#b0b2ff","tertiary-fixed":"#c4e7ff","surface-tint":"#00dbe9","on-tertiary":"#00354a","surface-container":"#1c1f29","on-secondary-fixed":"#07006c","on-primary-fixed":"#002022","error-container":"#93000a","on-tertiary-fixed":"#001e2c","inverse-on-surface":"#2c303a","surface-variant":"#31353f","on-error":"#690005","on-background":"#dfe2ef","inverse-primary":"#006970","on-primary-fixed-variant":"#004f54","surface-container-high":"#262a34","outline-variant":"#3b494b","secondary-fixed":"#e1e0ff","primary-fixed":"#7df4ff","on-tertiary-container":"#00668b","primary-container":"#00f0ff","primary-fixed-dim":"#00dbe9","secondary-fixed-dim":"#c0c1ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.5rem","gutter-mobile":"1rem","gutter":"1.5rem","space-xl":"2.5rem","margin":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","margin-mobile":"1.25rem","space-md":"1rem"},"fontFamily":{"display-hero-mobile":["Plus Jakarta Sans"],"mono-code":["JetBrains Mono"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"caption":["Inter"],"body-lg":["Inter"],"label-badge":["JetBrains Mono"],"headline-md":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-xl":["Plus Jakarta Sans"],"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"display-hero-mobile":["2.5rem",{"lineHeight":"1.1","letterSpacing":"-0.025em","fontWeight":"800"}],"mono-code":["0.875rem",{"lineHeight":"1.45","letterSpacing":"-0.01em","fontWeight":"500"}],"headline-xl-mobile":["2rem",{"lineHeight":"1.2","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["1.25rem",{"lineHeight":"1.4","letterSpacing":"-0.01em","fontWeight":"600"}],"caption":["0.75rem",{"lineHeight":"1.4","letterSpacing":"0.01em","fontWeight":"500"}],"body-lg":["1.125rem",{"lineHeight":"1.6","letterSpacing":"-0.005em","fontWeight":"400"}],"label-badge":["0.75rem",{"lineHeight":"1","letterSpacing":"0.05em","fontWeight":"600"}],"headline-md":["1.5rem",{"lineHeight":"1.3","letterSpacing":"-0.015em","fontWeight":"600"}],"display-hero":["4.5rem",{"lineHeight":"1.05","letterSpacing":"-0.035em","fontWeight":"800"}],"body-sm":["0.875rem",{"lineHeight":"1.5","letterSpacing":"0em","fontWeight":"400"}],"headline-xl":["3rem",{"lineHeight":"1.15","letterSpacing":"-0.025em","fontWeight":"700"}],"body-md":["1rem",{"lineHeight":"1.55","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["2rem",{"lineHeight":"1.25","letterSpacing":"-0.02em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.3)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"><div class="flex items-center gap-4 shrink-0"><a class="flex items-center gap-3 group" data-path="home" href="#"><img alt="Storeware Logo" class="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AEtjO1X0upv5MrzI2knNnelBLZKH4Qgj5YhZdofe1nZlEN0axCOZV9sdP3FZJs1amI07gwhPIR63hFwjVXUdZA3EAZIcD1nejswnjE3bbswep0gDsd2npdNjW1tpG9IcOgV-ybm1mKX-ouGQpwVFCtQx8QvLso5GUSMBWK4o2_9XS1pEHQh7uiJ-FbHWdhGFi47yqoOk3_4lEwkmT8_3-HDmQ1ShDAmYBDoV5bm2mfQts5VT"/><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface font-bold">Storeware</span><span class="font-label-badge text-label-badge px-2 py-0.5 rounded bg-surface-container text-primary-fixed-dim uppercase tracking-wider">.tn</span></div></a></div><nav class="hidden xl:flex items-center gap-7" data-active-classes="text-primary font-semibold"><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#services">Services</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="work-and-case-studies" href="#selected-work">Selected Work</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="tech-stack" href="#tech-architecture">Tech Stack</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="founder-story" href="#founder">Founder</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="process" href="#process">Process</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing-and-engagements" href="#pricing">Engagements</a></nav><div class="flex items-center gap-4 shrink-0"><div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05)]"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span></span><span class="font-label-badge text-label-badge text-on-surface-variant uppercase tracking-wider">Available Q2/Q3</span></div><a class="hidden lg:inline-flex items-center justify-center px-4 py-2 rounded-xl bg-primary-container text-on-primary-fixed font-headline-sm text-caption font-semibold tracking-wide hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all duration-300" href="#discovery-cta">Start a Project</a><div class="flex items-center pl-1 group cursor-pointer"><div class="w-8 h-8 rounded-full bg-surface-container-high border border-primary-container/40 flex items-center justify-center text-primary-fixed-dim font-mono-code text-caption font-bold shadow-[0_0_12px_rgba(0,240,255,0.2)] transition-transform duration-300 group-hover:scale-105">WK</div></div></div></div></header><main class="w-full pt-20 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO -->
+<section class="relative overflow-hidden px-6 lg:px-12 pt-12 pb-24 border-b border-surface-container-high/40">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-container/10 blur-[130px] rounded-full pointer-events-none"></div>
+<div class="absolute top-1/4 -right-20 w-72 h-72 bg-secondary-container/20 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="max-w-7xl mx-auto flex flex-col gap-12 relative z-10">
+<div class="flex flex-col items-start gap-6 max-w-4xl">
+<!-- Location / Elite Studio Badge -->
+<div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-badge text-label-badge text-primary uppercase tracking-widest">Tunisia's Elite Software Studio  Monastir  Remote Global</span>
+<span class="text-on-surface-variant font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-highest">CET / UTC+1</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight">
+          Engineering <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-container to-secondary">High-Velocity</span> SaaS &amp; Custom Platforms That Scale.
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          We partner with ambitious founders and enterprise leadership to architect battle-tested web systems, autonomous AI agents, and high-throughput cloud backends. Led directly by seasoned architects with no intermediate noise.
+        </p>
+<!-- CTA Cluster -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-primary-container text-on-primary-fixed font-headline-sm text-body-md font-semibold hover:shadow-[0_0_24px_rgba(0,240,255,0.45)] transition-all group" href="#discovery-cta">
+<span>Book a Technical Discovery Call</span>
+<span class="material-symbols-outlined text-lg transition-transform duration-200 group-hover:translate-x-1">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl bg-surface-container text-on-surface font-headline-sm text-body-md font-semibold hover:bg-surface-container-high transition-colors" href="#selected-work">
+<span class="material-symbols-outlined text-base text-primary-fixed-dim">layers</span>
+<span>Explore Selected Work</span>
+</a>
+<a class="inline-flex items-center gap-2 px-4 py-3.5 text-on-surface-variant hover:text-primary transition-colors font-mono-code text-caption uppercase tracking-wider" href="#tech-architecture">
+<span class="material-symbols-outlined text-base">code</span>
+<span>View Architecture Stack</span>
+</a>
+</div>
+</div>
+<!-- Stats Bar Ribbon -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 rounded-2xl bg-surface-container-low/70 backdrop-blur-xl shadow-lg">
+<div class="flex flex-col p-3">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">7+ Years</span>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mt-1">Full-stack engineering</span>
+</div>
+<div class="flex flex-col p-3">
+<span class="font-headline-lg text-headline-lg font-bold text-primary-container">Web, SaaS &amp; AI</span>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mt-1">End-to-end delivery</span>
+</div>
+<div class="flex flex-col p-3">
+<span class="font-headline-lg text-headline-lg font-bold text-secondary">Monastir, TN</span>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mt-1">Remote for MENA &amp; Europe</span>
+</div>
+<div class="flex flex-col p-3">
+<span class="font-headline-lg text-headline-lg font-bold text-tertiary-fixed">You own the code</span>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider mt-1">Full handover</span>
+</div>
+</div>
+<!-- Technical Showcase / Modern Stack Orchestration Terminal -->
+<div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-lowest shadow-2xl border border-surface-container-high/40">
+<!-- Terminal Header -->
+<div class="px-5 py-3.5 bg-surface-container-high/90 flex items-center justify-between border-b border-surface-container-highest/60">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
+<span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
+<span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+<span class="font-mono-code text-caption text-on-surface-variant ml-3 font-semibold">storeware-blueprint // architecture.orchestrator.ts</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container text-primary-container flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+              PRODUCTION BLUEPRINT
+            </span>
+<span class="font-mono-code text-caption text-on-surface-variant hidden sm:inline">TypeScript 5.6  Strictly Typed</span>
+</div>
+</div>
+<!-- Terminal Body Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 p-6 gap-6 bg-gradient-to-b from-surface-container-lowest to-surface-container-low/40">
+<!-- Left: Clean Architecture Orchestration Spec -->
+<div class="lg:col-span-7 flex flex-col justify-between font-mono-code text-mono-code space-y-4">
+<div class="space-y-1.5 text-on-surface-variant leading-relaxed">
+<p class="text-outline"><span class="text-primary-container">import</span> { defineArchitecture, SystemEngine } <span class="text-primary-container">from</span> <span class="text-tertiary-fixed">'@storeware/core'</span>;</p>
+<p class="text-outline mt-2"><span class="text-primary-container">export const</span> productionStack: SystemEngine = defineArchitecture({</p>
+<p class="pl-4">frontend: <span class="text-tertiary-fixed">'Angular 19 (Signals, SSR Hydration, Tailwind)'</span>,</p>
+<p class="pl-4">backendServices: [</p>
+<p class="pl-8"><span class="text-tertiary-fixed">'Spring Boot 3 (Java/Kotlin, GraalVM native, Clean Arch)'</span>,</p>
+<p class="pl-8"><span class="text-tertiary-fixed">'NestJS (Modular REST &amp; GraphQL, TypeORM, Prisma)'</span></p>
+<p class="pl-4">],</p>
+<p class="pl-4">aiIntegrations: {</p>
+<p class="pl-8">llmEngine: <span class="text-secondary">'Claude 3.5 Sonnet + OpenAI Structured Outputs'</span>,</p>
+<p class="pl-8">workflows: <span class="text-secondary">'n8n Autonomous Orchestration + Model Context Protocol (MCP)'</span>,</p>
+<p class="pl-8">channels: [<span class="text-secondary">'WhatsApp'</span>, <span class="text-secondary">'Instagram'</span>, <span class="text-secondary">'Shopify MCP'</span>]</p>
+<p class="pl-4">},</p>
+<p class="pl-4">persistence: <span class="text-primary-fixed-dim">'PostgreSQL (pgvector) + Redis In-Memory'</span>,</p>
+<p class="pl-4">delivery: <span class="text-tertiary-fixed">'Docker Multi-stage + Automated GitHub Actions CI/CD'</span></p>
+<p class="text-outline">});</p>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-high/60 flex items-center justify-between text-caption border border-surface-container-highest/50">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-sm text-primary">terminal</span>
+<span class="font-mono-code text-on-surface-variant">Handover standard: Zero black-box dependencies. Complete repository ownership.</span>
+</div>
+<span class="text-outline font-mono-code hidden sm:inline">100% IP Transferred</span>
+</div>
+</div>
+<!-- Right: Stack Blueprint Manifest -->
+<div class="lg:col-span-5 flex flex-col justify-between gap-3 bg-surface-container/60 p-5 rounded-xl border border-surface-container-high/50">
+<div class="flex items-center justify-between">
+<span class="font-mono-code text-caption uppercase text-primary-fixed-dim tracking-wider font-semibold">Modern Stack Orchestration</span>
+<span class="font-mono-code text-caption text-outline">Verified Standards</span>
+</div>
+<div class="space-y-2.5">
+<div class="p-3 rounded-lg bg-surface-container-high flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-lg mt-0.5">terminal</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">Angular 19 Signals + SSR</span>
+<span class="font-caption text-caption text-on-surface-variant">Fine-grained reactivity, zone-less readiness, lightning hydration.</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-lg mt-0.5">dns</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">Spring Boot &amp; NestJS Backends</span>
+<span class="font-caption text-caption text-on-surface-variant">Hexagonal architectures, strict DTO validation, high throughput.</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container text-lg mt-0.5">smart_toy</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">Claude + n8n + MCP Automations</span>
+<span class="font-caption text-caption text-on-surface-variant">Agentic tools, structured JSON, autonomous multi-app sync.</span>
+</div>
+</div>
+</div>
+<div class="pt-2 border-t border-surface-container-high flex items-center justify-between text-caption font-mono-code text-on-surface-variant">
+<span>Pipeline Quality</span>
+<span class="text-primary-container font-semibold">Strict Typing  Linters  Automated Tests</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: CORE SERVICES -->
+<section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="services">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div class="max-w-2xl space-y-3">
+<span class="font-mono-code text-caption text-primary uppercase tracking-widest block font-semibold">Architectural Capabilities</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+          Engineered for mission-critical digital systems.
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          We don't build disposable prototypes. We craft high-scalability platforms equipped with maintainable codebases that your in-house teams can comfortably scale for years.
+        </p>
+</div>
+<div class="shrink-0">
+<span class="font-label-badge text-label-badge text-outline uppercase tracking-wider block">End-to-End Execution</span>
+</div>
+</div>
+<!-- 4 Capabilities Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Capability 01: Websites & E-commerce -->
+<div class="group relative rounded-2xl bg-surface-container-low p-8 flex flex-col justify-between hover:bg-surface-container transition-all duration-300 shadow-md">
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<span class="font-mono-code text-headline-sm font-bold text-outline group-hover:text-primary transition-colors">01</span>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-2xl">shopping_bag</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">
+            Websites &amp; E-commerce
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Modern, fast, and SEO-optimized web experiences, e-commerce storefronts, and conversion-focused digital flagships built for scale and speed.
+          </p>
+</div>
+<div class="pt-8 flex flex-wrap gap-2">
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Angular</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">SSR &amp; Hydration</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Tailwind CSS</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-primary">Shopify / Custom</span>
+</div>
+</div>
+<!-- Capability 02: SaaS Products -->
+<div class="group relative rounded-2xl bg-surface-container-low p-8 flex flex-col justify-between hover:bg-surface-container transition-all duration-300 shadow-md">
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<span class="font-mono-code text-headline-sm font-bold text-outline group-hover:text-primary transition-colors">02</span>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl">web</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">
+            SaaS Products
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Multi-tenant, secure, and reactive software applications engineered from concept to production with clean state management and delightful UX.
+          </p>
+</div>
+<div class="pt-8 flex flex-wrap gap-2">
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Angular Signals</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">NestJS</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Spring Boot</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-secondary">PostgreSQL</span>
+</div>
+</div>
+<!-- Capability 03: Business Platforms (ERP/CRM/portals) -->
+<div class="group relative rounded-2xl bg-surface-container-low p-8 flex flex-col justify-between hover:bg-surface-container transition-all duration-300 shadow-md">
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<span class="font-mono-code text-headline-sm font-bold text-outline group-hover:text-primary transition-colors">03</span>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-2xl">dashboard_customize</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">
+            Business Platforms (ERP/CRM/portals)
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Mission-critical internal tools, operational dashboards, workflow management, and custom B2B portals replacing messy spreadsheets and fragmented systems.
+          </p>
+</div>
+<div class="pt-8 flex flex-wrap gap-2">
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Role-based Access</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Workflows</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Modular APIs</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-primary-container">Cloud DB</span>
+</div>
+</div>
+<!-- Capability 04: AI Automation & Chatbots -->
+<div class="group relative rounded-2xl bg-surface-container-low p-8 flex flex-col justify-between hover:bg-surface-container transition-all duration-300 shadow-md">
+<div class="space-y-5">
+<div class="flex items-center justify-between">
+<span class="font-mono-code text-headline-sm font-bold text-outline group-hover:text-primary transition-colors">04</span>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined text-2xl">smart_toy</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">
+            AI Automation &amp; Chatbots
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Intelligent agentic systems, customer support automation across social &amp; messaging channels, n8n orchestrations, and LLM-powered business tools.
+          </p>
+</div>
+<div class="pt-8 flex flex-wrap gap-2">
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">Claude &amp; OpenAI</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">n8n Workflows</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-on-surface">MCP</span>
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-high text-tertiary-fixed">Multi-channel</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: FOUNDER SPOTLIGHT & MONASTIR ADVANTAGE -->
+<section class="py-24 px-6 lg:px-12 bg-surface-container-lowest relative overflow-hidden" id="founder">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
+<!-- Sleek Monogram Visual Badge -->
+<div class="w-full lg:w-5/12 flex flex-col items-center sm:items-start shrink-0">
+<div class="relative w-72 sm:w-84 md:w-96 aspect-square rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-surface-container-high via-surface-container to-surface-container-lowest border border-primary-container/20 flex flex-col items-center justify-center p-8 group">
+<!-- Glow behind avatar -->
+<div class="absolute inset-0 bg-primary-container/5 rounded-2xl blur-xl group-hover:bg-primary-container/10 transition-all duration-500"></div>
+<!-- Sleek Monogram Circle -->
+<div class="relative w-36 h-36 rounded-full bg-surface-container-lowest border-2 border-primary-container/60 shadow-[0_0_40px_rgba(0,240,255,0.25)] flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+<span class="font-headline-xl text-headline-xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-br from-primary via-primary-container to-secondary select-none">
+                WK
+              </span>
+</div>
+<div class="relative mt-8 text-center space-y-1">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold block">Wissem Kerkeni</span>
+<span class="font-caption text-caption text-primary-fixed-dim font-mono-code block">Founder &amp; Lead Engineer</span>
+</div>
+</div>
+<div class="mt-6 flex items-center gap-3 p-3.5 rounded-xl bg-surface-container-low max-w-sm border border-surface-container-high">
+<span class="material-symbols-outlined text-primary-container text-xl">location_city</span>
+<div>
+<div class="font-body-sm text-body-sm font-semibold text-on-surface">Studio HQ: Monastir, Tunisia</div>
+<div class="font-caption text-caption text-on-surface-variant">UTC+1 / CET friendly  Direct remote sync with Europe &amp; MENA</div>
+</div>
+</div>
+</div>
+<!-- Bio & Founder Ethos -->
+<div class="w-full lg:w-7/12 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-surface-container text-secondary font-mono-code text-caption uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+          Principal-Led Craftsmanship
+        </div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+          "Vibe speed, engineering discipline."
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          Full-stack engineer since 2019 specializing in Angular, NestJS, Spring Boot, Ionic, and AI agent ecosystems. At Storeware, you collaborate directly with the lead engineer behind your code - zero junior intermediaries, no diluted briefs, and no communication latency.
+        </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          We combine rapid AI-accelerated delivery with deep software engineering fundamentals: clean architecture, strict typing, automated tests, CI/CD pipelines, and thorough code reviews. You get startup velocity without accumulating technical debt.
+        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5 border border-surface-container-high">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">Direct Collaboration</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Direct technical Slack or Discord channel sync with daily pull-request transparency.</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5 border border-surface-container-high">
+<span class="font-headline-sm text-headline-sm font-bold text-primary-container">Architectural Rigor</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Domain-driven boundaries, automated test harnesses, and predictable codebases.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: TECH STACK ARCHITECTURAL MATRIX -->
+<section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="tech-architecture">
+<div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+<span class="font-mono-code text-caption text-primary uppercase tracking-widest font-semibold">Our Battle-Tested Core</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Standardized on reliability, typed predictability, and speed.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">We deliberately avoid ephemeral hype frameworks. We select technologies designed for long-lived enterprise software.</p>
+</div>
+<!-- Tech Grid 3 Columns -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Frontend Architecture Card -->
+<div class="p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between space-y-6">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-2xl">devices</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Client-Side &amp; UI</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Reactive client tiers designed for high data density, snappy render times, and zero UI stutter.</p>
+<ul class="space-y-3">
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Angular (17 / 18 / 19)</span>
+<span class="font-mono-code text-caption text-primary">Signals / RxJS</span>
+</li>
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">TypeScript Strictly Typed</span>
+<span class="font-mono-code text-caption text-on-surface-variant">noImplicitAny</span>
+</li>
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Tailwind CSS Framework</span>
+<span class="font-mono-code text-caption text-on-surface-variant">Design Tokens</span>
+</li>
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Next.js / Vite Support</span>
+<span class="font-mono-code text-caption text-on-surface-variant">Hybrid SSG/SSR</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 font-caption text-caption text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">check_circle</span> Web Vitals 95+ score guaranteed
+        </div>
+</div>
+<!-- Backend & Cloud -->
+<div class="p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between space-y-6">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary text-2xl">database</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Distributed Backend</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">High-throughput concurrent service backplanes with transactional consistency and resilience.</p>
+<ul class="space-y-3">
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">NestJS &amp; Node Enterprise</span>
+<span class="font-mono-code text-caption text-secondary">Modular Microservices</span>
+</li>
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Spring Boot 3 (Java/Kotlin)</span>
+<span class="font-mono-code text-caption text-secondary">GraalVM Native</span>
+</li>
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">PostgreSQL &amp; Redis Cluster</span>
+<span class="font-mono-code text-caption text-on-surface-variant">ACID Compliant</span>
+</li>
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Docker &amp; Kubernetes</span>
+<span class="font-mono-code text-caption text-on-surface-variant">AWS ECS / EKS</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 font-caption text-caption text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">check_circle</span> Multi-AZ redundancy architecture
+        </div>
+</div>
+<!-- AI & Agent Orchestration -->
+<div class="p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between space-y-6">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary-container text-2xl">memory</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Autonomous AI Core</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Enterprise-grade LLM applications that take verified actions instead of hallucinating chat answers.</p>
+<ul class="space-y-3">
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">n8n Workflow Automation</span>
+<span class="font-mono-code text-caption text-primary-container">Multi-Channel Routing</span>
+</li>
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Model Context Protocol (MCP)</span>
+<span class="font-mono-code text-caption text-primary-container">Live System Actions</span>
+</li>
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">Claude 3.5 &amp; OpenAI API</span>
+<span class="font-mono-code text-caption text-on-surface-variant">Structured Output</span>
+</li>
+<li class="p-3 rounded-xl bg-surface-container flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface font-semibold">pgvector Semantic Search</span>
+<span class="font-mono-code text-caption text-on-surface-variant">Context Grounding</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 font-caption text-caption text-primary-container flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">check_circle</span> Strict deterministic validation layers
+        </div>
+</div>
+</div>
+<!-- Architectural Guarantees Pill Array -->
+<div class="mt-8 p-4 rounded-xl bg-surface-container-high/60 flex flex-wrap items-center justify-around gap-4 text-on-surface">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">verified</span>
+<span class="font-mono-code text-caption">100% Strict Type Coverage</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">hexagon</span>
+<span class="font-mono-code text-caption">Hexagonal Clean Architecture</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">bolt</span>
+<span class="font-mono-code text-caption">Automated Continuous Testing</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">security</span>
+<span class="font-mono-code text-caption">GDPR &amp; SOC-2 Ready Layouts</span>
+</div>
+</div>
+</section>
+<!-- SECTION 5: SELECTED ENGINEERING WORK -->
+<section class="py-24 px-6 lg:px-12 bg-surface-container-lowest" id="selected-work">
+<div class="max-w-7xl mx-auto space-y-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="font-mono-code text-caption text-primary uppercase tracking-widest font-semibold block mb-2">Track Record  Proven Systems</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Selected Engineering Work</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Proven systems and architectures delivered across the founder's engineering journey - no inflated case studies, just genuine technical execution.
+        </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Work 1: Cybersecurity Operations Platform -->
+<div class="rounded-2xl bg-surface-container-low overflow-hidden flex flex-col justify-between shadow-lg group border border-surface-container-high/50 hover:border-primary-container/40 transition-all">
+<div class="p-6 sm:p-8 space-y-5">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container text-primary uppercase">Security Core  Tooling</span>
+<span class="font-mono-code text-caption text-on-surface-variant">Operations Hub</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold group-hover:text-primary transition-colors">
+              Cybersecurity Operations Platform
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Centralized command platform coordinating penetration-testing tooling, vulnerability reporting workflows, security asset management, and secure artifact storage.
+            </p>
+<div class="p-4 rounded-xl bg-surface-container space-y-2 border border-surface-container-high">
+<div class="text-caption font-mono-code text-primary font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">shield</span> RBAC &amp; Secure Artifact Pipeline
+              </div>
+<p class="font-caption text-caption text-on-surface-variant">
+                Synchronized MinIO artifact encryption with Keycloak identity protocols and reactive state stores.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-2">
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Angular 19 Signals</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Spring Boot</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">GraphQL</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Redis</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Keycloak</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">MinIO</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Docker</span>
+</div>
+</div>
+<div class="p-6 bg-surface-container/40 flex items-center justify-between border-t border-surface-container-high/40">
+<span class="font-mono-code text-caption text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">memory</span> Deep System Architecture
+            </span>
+</div>
+</div>
+<!-- Work 2: Lab Formulation & R&D Software -->
+<div class="rounded-2xl bg-surface-container-low overflow-hidden flex flex-col justify-between shadow-lg group border border-surface-container-high/50 hover:border-secondary/40 transition-all">
+<div class="p-6 sm:p-8 space-y-5">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container text-secondary uppercase">Industrial R&amp;D  Formulations</span>
+<span class="font-mono-code text-caption text-on-surface-variant">Scientific Tools</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold group-hover:text-secondary transition-colors">
+              Lab Formulation &amp; R&amp;D Software
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Industrial formulation and scientific experiment tracking system managing chemical recipes, batch testings, real-time PHR/density calculations, and automated multi-sheet Excel reporting pipelines.
+            </p>
+<div class="p-4 rounded-xl bg-surface-container space-y-2 border border-surface-container-high">
+<div class="text-caption font-mono-code text-secondary font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">science</span> Real-Time Calculations &amp; Reports
+              </div>
+<p class="font-caption text-caption text-on-surface-variant">
+                Eliminated manual calculation errors through instant reactive math engines and automated laboratory export jobs.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-2">
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Angular</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">NestJS</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">TypeORM</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Azure AD</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">CI/CD</span>
+</div>
+</div>
+<div class="p-6 bg-surface-container/40 flex items-center justify-between border-t border-surface-container-high/40">
+<span class="font-mono-code text-caption text-secondary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">precision_manufacturing</span> Industrial Formulation Engine
+            </span>
+</div>
+</div>
+<!-- Work 3: Multi-Channel AI Commerce Assistant Engine -->
+<div class="rounded-2xl bg-surface-container-low overflow-hidden flex flex-col justify-between shadow-lg group border border-surface-container-high/50 hover:border-tertiary-fixed/40 transition-all">
+<div class="p-6 sm:p-8 space-y-5">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container text-tertiary-fixed uppercase">Autonomous AI  Commerce</span>
+<span class="font-mono-code text-caption text-on-surface-variant">Agent Infrastructure</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold group-hover:text-primary transition-colors">
+              Multi-Channel AI Commerce Assistant Engine
+            </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Unified conversational agent infrastructure orchestrating customer commerce conversations across WhatsApp, Instagram, Messenger, and TikTok, featuring automated catalog lookup, order inquiries, intelligent human handoff, and Shopify MCP integration.
+            </p>
+<div class="p-4 rounded-xl bg-surface-container space-y-2 border border-surface-container-high">
+<div class="text-caption font-mono-code text-primary-container font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">hub</span> Unified Omnichannel Agent
+              </div>
+<p class="font-caption text-caption text-on-surface-variant">
+                Live catalog inventory synchronization and graceful agent-to-support escalation protocols across social channels.
+              </p>
+</div>
+<div class="flex flex-wrap gap-1.5 pt-2">
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Claude</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">n8n Orchestration</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Shopify MCP</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Multi-Channel API</span>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container-high text-on-surface">Human Handoff</span>
+</div>
+</div>
+<div class="p-6 bg-surface-container/40 flex items-center justify-between border-t border-surface-container-high/40">
+<span class="font-mono-code text-caption text-tertiary-fixed font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">smart_toy</span> Agentic Workflow System
+            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: THE STOREWARE 4-STAGE SPRINT PROCESS -->
+<section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="process">
+<div class="max-w-3xl mb-16 space-y-3">
+<span class="font-mono-code text-caption text-primary uppercase tracking-widest font-semibold block">Disciplined Execution</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">The 4-Stage Storeware Sprint Process</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Predictable timelines, zero mystery deliverables, and absolute transparency from wireframe to cloud deployment.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Step 1 -->
+<div class="p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between space-y-6 relative group hover:bg-surface-container transition-all">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-mono-code text-headline-md font-bold text-primary">01</span>
+<span class="font-mono-code text-caption px-2 py-1 rounded bg-surface-container text-on-surface-variant">Days 1 - 5</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Architectural Discovery &amp; Blueprint</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Technical audit, database relational modeling, API schema contract drafting, and cloud infrastructure specification.
+          </p>
+</div>
+<div class="p-3 rounded-xl bg-surface-container text-caption font-mono-code text-on-surface-variant">
+          Output: Interactive System Specs &amp; ADRs
+        </div>
+</div>
+<!-- Step 2 -->
+<div class="p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between space-y-6 relative group hover:bg-surface-container transition-all">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-mono-code text-headline-md font-bold text-primary-container">02</span>
+<span class="font-mono-code text-caption px-2 py-1 rounded bg-surface-container text-on-surface-variant">Weeks 2 - 4</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Rapid Prototype &amp; Core Milestones</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            High-velocity development sprints. Live staging environments updated continuously via automated GitHub Actions pipelines.
+          </p>
+</div>
+<div class="p-3 rounded-xl bg-surface-container text-caption font-mono-code text-on-surface-variant">
+          Output: Live Interactive Staging URL
+        </div>
+</div>
+<!-- Step 3 -->
+<div class="p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between space-y-6 relative group hover:bg-surface-container transition-all">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-mono-code text-headline-md font-bold text-secondary">03</span>
+<span class="font-mono-code text-caption px-2 py-1 rounded bg-surface-container text-on-surface-variant">Weeks 5 - 6</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Production Hardening &amp; Security</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            k6 synthetic load stress tests, penetration scan mitigation, Redis caching fine-tuning, and zero-defect remediation.
+          </p>
+</div>
+<div class="p-3 rounded-xl bg-surface-container text-caption font-mono-code text-on-surface-variant">
+          Output: Security Audit &amp; Perf Benchmark
+        </div>
+</div>
+<!-- Step 4 -->
+<div class="p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between space-y-6 relative group hover:bg-surface-container transition-all">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-mono-code text-headline-md font-bold text-tertiary-fixed">04</span>
+<span class="font-mono-code text-caption px-2 py-1 rounded bg-surface-container text-on-surface-variant">Ongoing</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Seamless Handover &amp; Retainer Support</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Full code ownership, comprehensive developer walkthroughs, or continuous monthly architectural stewardship.
+          </p>
+</div>
+<div class="p-3 rounded-xl bg-surface-container text-caption font-mono-code text-on-surface-variant">
+          Output: Complete Repo, Docs &amp; Runbooks
+        </div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: ENGAGEMENT MODELS & TRANSPARENT PRICING -->
+<section class="py-24 px-6 lg:px-12 bg-surface-container-lowest border-y border-surface-container-high/30" id="pricing">
+<div class="max-w-7xl mx-auto space-y-16">
+<div class="text-center max-w-3xl mx-auto space-y-3">
+<span class="font-mono-code text-caption text-primary uppercase tracking-widest font-semibold">Transparent Engagements</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Structured For Velocity, Not Billable Padding</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Whether you need a full turnkey product delivery or senior architectural horsepower plugged into your existing squad, we offer transparent, outcome-oriented models.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+<!-- Model 1 -->
+<div class="p-8 rounded-2xl bg-surface-container-low flex flex-col justify-between space-y-8 shadow-md">
+<div class="space-y-4">
+<span class="font-mono-code text-caption text-on-surface-variant uppercase tracking-wider block">Intensive Boost</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Architecture Audit &amp; AI Implementation</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Ideal for startups with existing backends struggling with performance bottlenecks or seeking to implement an autonomous LLM/RAG workflow quickly.
+            </p>
+<div class="pt-2">
+<span class="font-headline-lg text-headline-lg text-primary font-bold">2-Week Sprint</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-1">Fixed Investment  Dedicated Principal</span>
+</div>
+</div>
+<div class="space-y-4">
+<ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Comprehensive code &amp; query teardown
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">check</span> pgvector / LLM Agent pipeline build
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">check</span> Actionable performance remediation plan
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">check</span> 30-day post-handover Slack support
+              </li>
+</ul>
+<a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm font-semibold transition-colors" href="#discovery-cta">
+              Schedule Sprint Scope
+            </a>
+</div>
+</div>
+<!-- Model 2: Highlighted -->
+<div class="p-8 rounded-2xl bg-surface-container relative flex flex-col justify-between space-y-8 shadow-2xl">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary-container text-on-primary-fixed font-mono-code text-caption font-bold tracking-wider uppercase">
+            Most Popular
+          </div>
+<div class="space-y-4 pt-2">
+<span class="font-mono-code text-caption text-primary-container uppercase tracking-wider block">Turn-Key Build</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Full End-to-End MVP / SaaS Platform</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              We design, architect, and ship your production-ready digital product from zero to live deployment in 6 to 8 weeks with complete operational handover.
+            </p>
+<div class="pt-2">
+<span class="font-headline-lg text-headline-lg text-primary-container font-bold">6 - 8 Weeks</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-1">Milestone-based Delivery  Zero Surprises</span>
+</div>
+</div>
+<div class="space-y-4">
+<ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm">check</span> Angular 19 + NestJS/Spring Boot system
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm">check</span> PostgreSQL database with migrations
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm">check</span> Auth, RBAC &amp; Stripe Billing integration
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-sm">check</span> Dockerized AWS / Cloudflare deployment
+              </li>
+</ul>
+<a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-primary-container text-on-primary-fixed font-headline-sm text-body-md font-semibold hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all" href="#discovery-cta">
+              Book MVP Discovery Call
+            </a>
+</div>
+</div>
+<!-- Model 3 -->
+<div class="p-8 rounded-2xl bg-surface-container-low flex flex-col justify-between space-y-8 shadow-md">
+<div class="space-y-4">
+<span class="font-mono-code text-caption text-on-surface-variant uppercase tracking-wider block">Staff Extension</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold">Dedicated Staff Architect Retainer</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Embed Wissem Kerkeni directly into your ongoing engineering operations for high-stakes scaling and feature leadership.
+            </p>
+<div class="pt-2">
+<span class="font-headline-lg text-headline-lg text-secondary font-bold">Monthly Retainer</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-1">Flexible Commitment  Sync via Slack</span>
+</div>
+</div>
+<div class="space-y-4">
+<ul class="space-y-2.5 font-body-sm text-body-sm text-on-surface">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span> Direct PR review &amp; senior code commits
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span> Standups &amp; async architectural guidance
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span> CET timezone daily availability
+              </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">check</span> Zero agency overhead or lock-in contracts
+              </li>
+</ul>
+<a class="w-full inline-flex items-center justify-center px-4 py-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm font-semibold transition-colors" href="#discovery-cta">
+              Discuss Retainer Availability
+            </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 8: FINAL CONVERSION & CALL TO ACTION -->
+<section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="discovery-cta">
+<div class="relative rounded-3xl bg-gradient-to-br from-surface-container to-surface-container-low p-8 sm:p-12 lg:p-16 overflow-hidden shadow-2xl border border-surface-container-high/40">
+<!-- Decorative Lighting Glows -->
+<div class="absolute -right-20 -bottom-20 w-96 h-96 bg-primary-container/15 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute -left-20 -top-20 w-80 h-80 bg-secondary-container/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center text-center space-y-8">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-high text-primary-container font-mono-code text-caption font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          Direct Engineer-to-Engineer Consultation
+        </div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface tracking-tight max-w-3xl">
+          Ready to turn your complex specifications into production code?
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          Book a 30-minute discovery call directly with Wissem Kerkeni. We will assess your tech stack, define architectural constraints, and deliver an actionable execution blueprint with zero sales pressure.
+        </p>
+<!-- Action Card / Interactive Booking Panel -->
+<div class="w-full max-w-xl p-6 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl shadow-xl flex flex-col gap-4 text-left border border-surface-container-high/60">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high/40">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">calendar_month</span>
+<span class="font-headline-sm text-body-md font-semibold text-on-surface">30-Min Architectural Discovery Call</span>
+</div>
+<span class="font-mono-code text-caption px-2 py-0.5 rounded bg-surface-container text-primary">Free Assessment</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-caption font-mono-code text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">schedule</span> CET / UTC+1 Sync (London  Paris  Dubai)
+            </div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary">videocam</span> Google Meet / Zoom HD
+            </div>
+</div>
+<div class="pt-2 flex flex-col sm:flex-row gap-3">
+<a class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-primary-container text-on-primary-fixed font-headline-sm text-body-md font-semibold hover:shadow-[0_0_24px_rgba(0,240,255,0.45)] transition-all" href="mailto:hello@storeware.tn?subject=Technical%20Discovery%20Call%20Request%20-%20Storeware">
+<span class="material-symbols-outlined text-lg">mail</span>
+<span>Email: hello@storeware.tn</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-surface-container-high hover:bg-surface-container text-on-surface font-headline-sm text-body-md font-semibold transition-colors" href="https://wa.me/21600000000" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-lg text-primary-container">chat</span>
+<span>Direct WhatsApp</span>
+</a>
+</div>
+</div>
+<!-- Studio Location & Trust Footer -->
+<div class="flex flex-wrap items-center justify-center gap-6 pt-4 text-caption text-on-surface-variant font-mono-code">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">location_on</span>
+            Storeware HQ  Monastir, Tunisia
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">lock</span>
+            Mutual NDAs Signed on Request
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm text-primary">code</span>
+            100% Intellectual Property Assigned to You
+          </span>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high/30"><div class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-14"><div class="lg:col-span-2 space-y-4"><div class="flex items-center gap-3"><img alt="Storeware Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1X0upv5MrzI2knNnelBLZKH4Qgj5YhZdofe1nZlEN0axCOZV9sdP3FZJs1amI07gwhPIR63hFwjVXUdZA3EAZIcD1nejswnjE3bbswep0gDsd2npdNjW1tpG9IcOgV-ybm1mKX-ouGQpwVFCtQx8QvLso5GUSMBWK4o2_9XS1pEHQh7uiJ-FbHWdhGFi47yqoOk3_4lEwkmT8_3-HDmQ1ShDAmYBDoV5bm2mfQts5VT"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold">Storeware</span><span class="font-label-badge text-label-badge px-2 py-0.5 rounded bg-surface-container text-primary-fixed-dim uppercase">Studio</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">High-performance digital engineering studio crafting bespoke web platforms, distributed backends, and autonomous agent systems.</p><div class="flex flex-wrap items-center gap-2 pt-2"><span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-low text-primary-fixed-dim">Angular</span><span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-low text-secondary">NestJS</span><span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-low text-tertiary-fixed">Spring Boot</span><span class="font-label-badge text-label-badge px-2.5 py-1 rounded bg-surface-container-low text-primary-container">AI Agents</span></div></div><div class="space-y-3"><h4 class="font-mono-code text-mono-code text-on-surface uppercase tracking-wider font-semibold">Studio</h4><ul class="space-y-2"><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-sm text-primary-fixed-dim">location_on</span><span class="font-caption text-caption">Monastir, Tunisia</span></li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-sm text-primary-fixed-dim">schedule</span><span class="font-caption text-caption">UTC+1 (CET Zone)</span></li><li class="flex items-center gap-2 text-on-surface-variant"><span class="material-symbols-outlined text-sm text-primary-fixed-dim">mail</span><a class="font-caption text-caption hover:text-primary transition-colors" href="mailto:hello@storeware.tn">hello@storeware.tn</a></li></ul></div><div class="space-y-3"><h4 class="font-mono-code text-mono-code text-on-surface uppercase tracking-wider font-semibold">Index</h4><ul class="space-y-2"><li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="services" href="#services">Services</a></li><li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="work-and-case-studies" href="#selected-work">Selected Work</a></li><li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="tech-stack" href="#tech-architecture">Tech Architecture</a></li><li><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="pricing-and-engagements" href="#pricing">Engagements</a></li></ul></div><div class="space-y-3"><h4 class="font-mono-code text-mono-code text-on-surface uppercase tracking-wider font-semibold">Founder &amp; Network</h4><div class="flex items-center gap-3 pb-2"><div class="w-9 h-9 rounded-full bg-surface-container-high border border-primary-container/40 flex items-center justify-center text-primary-fixed-dim font-mono-code text-caption font-bold shadow-[0_0_12px_rgba(0,240,255,0.2)]">WK</div><div><div class="font-body-sm text-body-sm text-on-surface font-semibold">Wissem Kerkeni</div><div class="font-caption text-caption text-on-surface-variant">Founder &amp; Lead Engineer</div></div></div><div class="flex items-center gap-4 pt-1"><a class="text-on-surface-variant hover:text-primary transition-colors font-caption text-caption flex items-center gap-1.5" href="https://github.com" rel="noopener" target="_blank"><span class="material-symbols-outlined text-base">terminal</span>GitHub</a><a class="text-on-surface-variant hover:text-primary transition-colors font-caption text-caption flex items-center gap-1.5" href="https://linkedin.com" rel="noopener" target="_blank"><span class="material-symbols-outlined text-base">hub</span>LinkedIn</a></div></div></div><div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-surface-container-high/40"><p class="font-caption text-caption text-on-surface-variant">c 2025 Storeware (storeware.tn). Monastir, Tunisia. Crafted with architectural rigor.</p><div class="flex items-center gap-6"><span class="font-caption text-caption text-on-surface-variant flex items-center gap-1.5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container"></span>All Systems Operational</span></div></div></div></footer></body></html>

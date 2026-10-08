@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Storeware — Websites, SaaS & Platforms for Business</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0d0d14;
+    --ink-2: #2a2a35;
+    --muted: #6b6b78;
+    --paper: #f6f4ef;
+    --card: #ffffff;
+    --line: #e4e1d9;
+    --accent: #ff5a1f;
+    --accent-soft: #ffe7dc;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, .logo { font-family: "Space Grotesk", sans-serif; letter-spacing: -0.02em; line-height: 1.1; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 10; background: rgba(246,244,239,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+  .logo-mark { width: 30px; height: 30px; border-radius: 8px; background: var(--ink); display: grid; place-items: center; }
+  .logo-mark span { width: 12px; height: 12px; background: var(--accent); border-radius: 3px; transform: rotate(45deg); }
+  .links { display: flex; gap: 32px; font-size: 15px; color: var(--ink-2); }
+  .links a:hover { color: var(--accent); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 15px; transition: transform .15s, background .15s; }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-accent { background: var(--accent); color: #fff; }
+  .btn-ghost { border: 1px solid var(--ink); }
+
+  /* Hero */
+  .hero { padding: 96px 0 72px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); background: var(--accent-soft); padding: 6px 14px; border-radius: 999px; }
+  .hero h1 { font-size: clamp(44px, 7vw, 84px); font-weight: 700; margin: 24px 0; max-width: 900px; }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p { font-size: 20px; color: var(--muted); max-width: 620px; margin-bottom: 36px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-visual { margin-top: 64px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
+  .mock { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; box-shadow: 0 20px 40px -24px rgba(13,13,20,.25); }
+  .mock-bar { display: flex; gap: 6px; margin-bottom: 16px; }
+  .mock-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+  .mock-row { height: 12px; border-radius: 6px; background: #efece5; margin-bottom: 10px; }
+  .mock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 16px; }
+  .mock-tile { height: 80px; border-radius: 10px; background: #efece5; }
+  .mock-tile.hl { background: var(--accent); }
+  .mock.dark { background: var(--ink); border-color: var(--ink); color: #fff; display: flex; flex-direction: column; justify-content: space-between; }
+  .metric { font-family: "Space Grotesk"; font-size: 52px; font-weight: 700; }
+  .metric small { font-size: 18px; color: var(--accent); margin-left: 6px; }
+  .bars { display: flex; align-items: flex-end; gap: 8px; height: 90px; }
+  .bars span { flex: 1; background: #2e2e3a; border-radius: 4px 4px 0 0; }
+  .bars span:last-child { background: var(--accent); }
+
+  /* Sections */
+  section { padding: 96px 0; }
+  .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 48px; flex-wrap: wrap; }
+  .section-head h2 { font-size: clamp(34px, 4.5vw, 52px); max-width: 640px; }
+  .section-head p { color: var(--muted); max-width: 380px; }
+
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .service { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; transition: border-color .2s, transform .2s; }
+  .service:hover { border-color: var(--ink); transform: translateY(-4px); }
+  .icon { width: 48px; height: 48px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-bottom: 24px; }
+  .service h3 { font-size: 24px; margin-bottom: 12px; }
+  .service p { color: var(--muted); margin-bottom: 20px; }
+  .service ul { list-style: none; display: grid; gap: 8px; font-size: 14px; color: var(--ink-2); }
+  .service li::before { content: "→"; color: var(--accent); margin-right: 8px; }
+
+  /* Process */
+  .process { background: var(--ink); color: #fff; border-radius: 32px; margin: 0 24px; }
+  .process .section-head p { color: #a3a3b0; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: #2a2a35; border-radius: var(--radius); overflow: hidden; }
+  .step { background: var(--ink); padding: 32px 28px; }
+  .step-num { font-family: "Space Grotesk"; color: var(--accent); font-size: 14px; font-weight: 600; margin-bottom: 40px; }
+  .step h3 { font-size: 22px; margin-bottom: 10px; }
+  .step p { color: #a3a3b0; font-size: 15px; }
+
+  /* Stack */
+  .stack { display: flex; flex-wrap: wrap; gap: 12px; }
+  .chip { padding: 10px 18px; border: 1px solid var(--line); background: var(--card); border-radius: 999px; font-weight: 500; font-size: 15px; }
+
+  /* Why */
+  .why { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; border-top: 1px solid var(--line); padding-top: 48px; }
+  .why h3 { font-size: 20px; margin-bottom: 8px; }
+  .why p { color: var(--muted); }
+
+  /* CTA */
+  .cta { background: var(--accent); color: #fff; border-radius: 32px; padding: 72px 56px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+  .cta h2 { font-size: clamp(36px, 4.5vw, 56px); }
+  .cta p { opacity: .9; margin-top: 16px; font-size: 18px; }
+  form { background: #fff; border-radius: var(--radius); padding: 28px; display: grid; gap: 12px; color: var(--ink); }
+  input, select, textarea { width: 100%; font: inherit; padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); }
+  textarea { resize: vertical; min-height: 90px; }
+  form .btn { justify-content: center; border: 0; cursor: pointer; }
+
+  footer { padding: 48px 0; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+  @media (max-width: 860px) {
+    .links { display: none; }
+    .hero-visual, .services, .why, .cta { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .cta { padding: 40px 24px; }
+    .process { margin: 0 12px; }
+  }
+  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <a href="#" class="logo"><span class="logo-mark"><span></span></span>storeware</a>
+      <div class="links">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#stack">Technology</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="btn btn-dark">Start a project</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="eyebrow">● Software studio · Tunisia</span>
+      <h1>We build the software your business <em>runs on.</em></h1>
+      <p>Storeware designs and engineers websites, SaaS products and custom platforms for ambitious businesses. From first idea to launch, and after.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-accent">Start a project →</a>
+        <a href="#services" class="btn btn-ghost">Explore services</a>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mock">
+          <div class="mock-bar"><i></i><i></i><i></i></div>
+          <div class="mock-row" style="width:40%"></div>
+          <div class="mock-row" style="width:75%"></div>
+          <div class="mock-row" style="width:60%"></div>
+          <div class="mock-grid">
+            <div class="mock-tile hl"></div><div class="mock-tile"></div><div class="mock-tile"></div>
+            <div class="mock-tile"></div><div class="mock-tile"></div><div class="mock-tile"></div>
+          </div>
+        </div>
+        <div class="mock dark">
+          <div>
+            <div style="color:#a3a3b0;font-size:14px">Monthly active users</div>
+            <div class="metric">12.4k<small>▲ 18%</small></div>
+          </div>
+          <div class="bars">
+            <span style="height:35%"></span><span style="height:50%"></span><span style="height:42%"></span>
+            <span style="height:65%"></span><span style="height:58%"></span><span style="height:80%"></span><span style="height:100%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Three ways we help your business grow online.</h2>
+        <p>Whether you need a fast marketing site or a multi-tenant platform, we ship production-grade software.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <div class="icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="18" height="15" rx="2"/><path d="M2 8h18"/></svg></div>
+          <h3>Websites</h3>
+          <p>Fast, beautiful, SEO-ready websites that turn visitors into customers.</p>
+          <ul><li>Corporate & marketing sites</li><li>E-commerce stores</li><li>CMS & multilingual (AR / FR / EN)</li></ul>
+        </article>
+        <article class="service">
+          <div class="icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 16a4 4 0 0 1 0-8 6 6 0 0 1 11.5 1.5A3.5 3.5 0 0 1 17 16z"/></svg></div>
+          <h3>SaaS Products</h3>
+          <p>We take your product idea from MVP to a scalable subscription business.</p>
+          <ul><li>MVP in weeks, not months</li><li>Billing, auth & multi-tenancy</li><li>Analytics & admin dashboards</li></ul>
+        </article>
+        <article class="service">
+          <div class="icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="7" height="7" rx="1.5"/><rect x="13" y="2" width="7" height="7" rx="1.5"/><rect x="2" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></div>
+          <h3>Business Platforms</h3>
+          <p>Custom internal tools and platforms that automate how your team works.</p>
+          <ul><li>ERP, CRM & inventory systems</li><li>Marketplaces & portals</li><li>API integrations & payments</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>A clear process, from idea to launch.</h2>
+        <p>Weekly demos, transparent timelines and one team accountable end to end.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">01</div><h3>Discover</h3><p>We map your goals, users and requirements into a clear scope.</p></div>
+        <div class="step"><div class="step-num">02</div><h3>Design</h3><p>Wireframes and polished UI you can click through before we code.</p></div>
+        <div class="step"><div class="step-num">03</div><h3>Build</h3><p>Agile sprints with modern, tested, maintainable code.</p></div>
+        <div class="step"><div class="step-num">04</div><h3>Launch & Grow</h3><p>Deployment, monitoring and ongoing support as you scale.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Built with a modern, proven stack.</h2>
+        <p>We choose reliable technology so your product stays fast and easy to evolve.</p>
+      </div>
+      <div class="stack">
+        <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">TypeScript</span><span class="chip">Node.js</span>
+        <span class="chip">Laravel</span><span class="chip">PostgreSQL</span><span class="chip">Flutter</span><span class="chip">AWS</span>
+        <span class="chip">Vercel</span><span class="chip">Docker</span><span class="chip">Stripe & Konnect</span><span class="chip">Figma</span>
+      </div>
+      <div class="why" style="margin-top:64px">
+        <div><h3>Local team, global standards</h3><p>Based in Tunisia, delivering for clients across MENA and Europe.</p></div>
+        <div><h3>Fixed scope, fair pricing</h3><p>Clear quotes and milestones. No surprises on your invoice.</p></div>
+        <div><h3>You own everything</h3><p>Full source code, documentation and infrastructure handed over.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>Have a project in mind? Let's build it.</h2>
+          <p>Tell us what you need and we'll get back within one business day with next steps.</p>
+          <p style="margin-top:24px;font-weight:600">hello@storeware.tn</p>
+        </div>
+        <form onsubmit="return false">
+          <input placeholder="Your name" />
+          <input placeholder="Email" type="email" />
+          <select><option>Website</option><option>SaaS product</option><option>Business platform</option><option>Not sure yet</option></select>
+          <textarea placeholder="Tell us about your project"></textarea>
+          <button class="btn btn-dark">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <a href="#" class="logo" style="color:var(--ink)"><span class="logo-mark"><span></span></span>storeware</a>
+      <span>© 2026 Storeware. Tunis, Tunisia.</span>
+    </div>
+  </footer>
+</body>
+</html>
