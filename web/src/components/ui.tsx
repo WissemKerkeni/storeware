@@ -8,7 +8,7 @@ export function Icon({ name, className = '' }: { name: string; className?: strin
   )
 }
 
-export function Logo({ suffix = '.tn' }: { suffix?: string }) {
+export function Logo({ suffix = '.tn' }: { suffix?: string | null }) {
   return (
     <span className="flex items-center gap-2.5">
       <svg viewBox="0 0 32 32" className="h-8 w-8 shrink-0" aria-hidden="true">
@@ -18,9 +18,11 @@ export function Logo({ suffix = '.tn' }: { suffix?: string }) {
         <path d="M16 12l4 4-4 4-4-4z" fill="#0a0e17" />
       </svg>
       <span className="font-display text-xl font-bold tracking-tight text-ink">Storeware</span>
-      <span className="rounded bg-surface px-2 py-0.5 font-mono text-xs font-semibold uppercase tracking-wider text-cyan-dim">
-        {suffix}
-      </span>
+      {suffix && (
+        <span className="rounded bg-surface px-2 py-0.5 font-mono text-xs font-semibold uppercase tracking-wider text-cyan-dim">
+          {suffix}
+        </span>
+      )}
     </span>
   )
 }

@@ -1,0 +1,17 @@
+/* Self-hosted fonts: the FR/DE pages make no requests to Google (GDPR). */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+@import '@fontsource/plus-jakarta-sans/800.css';
+
+/* font-display: block so icon names never flash as plain text. */
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('../../node_modules/@fontsource/material-symbols-outlined/files/material-symbols-outlined-latin-400-normal.woff2')
+    format('woff2');
+}

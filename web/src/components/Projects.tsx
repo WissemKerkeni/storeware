@@ -1,32 +1,11 @@
-import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from 'react'
+import { useRef, useState, type CSSProperties, type PointerEvent } from 'react'
 import { accentText, projectFilters, projects, type ProjectFilter } from '../content'
 import { Icon } from './ui'
+import { useInView } from './useInView'
 
 type Project = (typeof projects)[number]
 
 const FRAME_WIDTH = 1200
-
-function useInView<T extends Element>() {
-  const ref = useRef<T>(null)
-  const [inView, setInView] = useState(false)
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true)
-          io.disconnect()
-        }
-      },
-      // Trigger on position, not on a ratio: the section is taller than a phone screen.
-      { rootMargin: '0px 0px -20% 0px' },
-    )
-    io.observe(el)
-    return () => io.disconnect()
-  }, [])
-  return [ref, inView] as const
-}
 
 const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -34,7 +13,19 @@ function hostname(url: string) {
   return new URL(url).hostname
 }
 
-function BrowserFrame({ project, aspect }: { project: Project; aspect: string }) {
+type FrameProject = Pick<Project, 'url' | 'image'>
+
+const defaultFrameLabels = { hover: 'Hover to scroll', touch: 'Live preview', live: 'LIVE' }
+
+export function BrowserFrame({
+  project,
+  aspect,
+  labels = defaultFrameLabels,
+}: {
+  project: FrameProject
+  aspect: string
+  labels?: typeof defaultFrameLabels
+}) {
   const scrolls = project.image.height > FRAME_WIDTH * 0.8
   // Longer pages pan for longer so the speed stays readable.
   const seconds = Math.min(10, Math.max(4, (project.image.height / FRAME_WIDTH) * 1.4))
@@ -56,7 +47,7 @@ function BrowserFrame({ project, aspect }: { project: Project; aspect: string })
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-75" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan" />
           </span>
-          LIVE
+          {labels.live}
         </span>
       </div>
 
@@ -82,8 +73,8 @@ function BrowserFrame({ project, aspect }: { project: Project; aspect: string })
         {scrolls && (
           <span className="shot-hint pointer-events-none absolute right-3 bottom-3 flex items-center gap-1 rounded-full bg-surface-lowest/85 px-2.5 py-1 font-mono text-[0.65rem] text-muted backdrop-blur">
             <Icon name="swipe_down" className="text-sm text-cyan-dim" />
-            <span className="hover-only">Hover to scroll</span>
-            <span className="touch-only">Live preview</span>
+            <span className="hover-only">{labels.hover}</span>
+            <span className="touch-only">{labels.touch}</span>
           </span>
         )}
       </a>
