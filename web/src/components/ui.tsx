@@ -1,5 +1,3 @@
-import type { ReactNode } from 'react'
-
 export function Icon({ name, className = '' }: { name: string; className?: string }) {
   return (
     <span aria-hidden="true" className={`icon ${className}`}>
@@ -27,39 +25,10 @@ export function Logo({ suffix = '.tn' }: { suffix?: string | null }) {
   )
 }
 
-export function Monogram({ size = 'sm' }: { size?: 'sm' | 'lg' }) {
-  if (size === 'lg') {
-    return (
-      <div className="relative flex h-36 w-36 items-center justify-center rounded-full border-2 border-cyan/60 bg-surface-lowest shadow-[0_0_40px_rgba(0,240,255,0.25)] transition-transform duration-500 group-hover:scale-105">
-        <span className="bg-gradient-to-br from-cyan-soft via-cyan to-violet bg-clip-text font-display text-5xl font-bold text-transparent select-none">
-          WK
-        </span>
-      </div>
-    )
-  }
+export function Monogram() {
   return (
     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan/40 bg-surface-high font-mono text-xs font-bold text-cyan-dim shadow-[0_0_12px_rgba(0,240,255,0.2)]">
       WK
-    </div>
-  )
-}
-
-export function SectionHeading({
-  eyebrow,
-  title,
-  children,
-  center = false,
-}: {
-  eyebrow: string
-  title: ReactNode
-  children?: ReactNode
-  center?: boolean
-}) {
-  return (
-    <div className={`space-y-3 ${center ? 'mx-auto max-w-3xl text-center' : 'max-w-2xl'}`}>
-      <span className="eyebrow block">{eyebrow}</span>
-      <h2 className="text-3xl font-bold text-ink sm:text-5xl sm:leading-[1.12]">{title}</h2>
-      {children && <p className="text-muted">{children}</p>}
     </div>
   )
 }

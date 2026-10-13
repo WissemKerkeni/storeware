@@ -1,6 +1,6 @@
-import { useEffect, type ReactNode } from 'react'
+import { useEffect, useState, type FormEvent, type ReactNode } from 'react'
 import { contact } from '../content'
-import { BrowserFrame } from '../components/Projects'
+import { BrowserFrame } from '../components/BrowserFrame'
 import { useInView } from '../components/useInView'
 import { Icon, primaryButton, secondaryButton } from '../components/ui'
 import { Fill, LandingFooter, LandingHeader } from './Layout'
@@ -269,33 +269,111 @@ function Faq({ c }: { c: LandingContent }) {
   )
 }
 
-function FinalCta({ c }: { c: LandingContent }) {
-  const s = c.final
+const field =
+  'w-full rounded-xl border border-surface-high bg-surface-low px-4 py-3 text-sm text-ink placeholder:text-outline focus:border-cyan/60 focus:outline-none focus:ring-2 focus:ring-cyan/20'
+
+function ContactSection({ c }: { c: LandingContent }) {
+  const s = c.contact
+  const f = s.form
+  const [sent, setSent] = useState(false)
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const data = new FormData(e.currentTarget)
+    const name = String(data.get('name') ?? '')
+    const subject = `${f.subject}: ${data.get('type')} (${name})`
+    const body = [
+      `${f.name}: ${name}`,
+      `${f.email}: ${data.get('email')}`,
+      `${f.business}: ${data.get('business') || '-'}`,
+      `${f.type}: ${data.get('type')}`,
+      '',
+      String(data.get('message') ?? ''),
+    ].join('\n')
+    window.location.href = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    setSent(true)
+  }
+
   return (
-    <section id={s.id} className={sectionPad}>
-      <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-surface-high/40 bg-gradient-to-br from-surface to-surface-low p-6 text-center shadow-2xl sm:p-14">
-        <div className="pointer-events-none absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-cyan/15 blur-[100px]" />
-        <div className="pointer-events-none absolute -top-20 -left-20 h-72 w-72 rounded-full bg-violet-deep/20 blur-[100px]" />
-        <div className="relative space-y-6">
-          <h2 className={h2}>{s.title}</h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted">{s.body}</p>
-          <div className="flex flex-col justify-center gap-3 sm:flex-row">
-            <WhatsAppButton c={c} label={s.whatsapp} />
-            <a href={`mailto:${contact.email}?subject=${encodeURIComponent(s.emailSubject)}`} className={secondaryButton}>
-              <Icon name="mail" className="text-lg text-cyan-dim" />
-              <span>{s.email}</span>
-            </a>
+    <section id={s.id} className="mx-auto w-full max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-12">
+      <div className="relative overflow-hidden rounded-3xl border border-surface-high/40 bg-gradient-to-br from-surface to-surface-low p-6 shadow-2xl sm:p-12 lg:p-16">
+        <div className="pointer-events-none absolute -right-20 -bottom-20 h-96 w-96 rounded-full bg-cyan/15 blur-[100px]" />
+        <div className="pointer-events-none absolute -top-20 -left-20 h-80 w-80 rounded-full bg-violet-deep/20 blur-[100px]" />
+
+        <div className="relative z-10 grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="space-y-7">
+            <div className="inline-flex items-center gap-2 rounded-full bg-surface-high px-3.5 py-1.5 text-xs font-semibold text-cyan">
+              <span className="h-2 w-2 rounded-full bg-cyan" />
+              {s.badge}
+            </div>
+            <h2 className={h2}>{s.title}</h2>
+            <p className="text-lg leading-relaxed text-muted">{s.body}</p>
+
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <WhatsAppButton c={c} label={s.whatsapp} className="flex-1" />
+              <a href={`mailto:${contact.email}?subject=${encodeURIComponent(s.emailSubject)}`} className={secondaryButton}>
+                <Icon name="mail" className="text-lg text-cyan" />
+                <span>{contact.email}</span>
+              </a>
+            </div>
+
+            <ul className="grid gap-3 text-sm text-muted sm:grid-cols-2">
+              {s.facts.map((fact) => (
+                <li key={fact.label} className="flex items-center gap-2">
+                  <Icon name={fact.icon} className="text-base text-cyan-soft" />
+                  {fact.label}
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex flex-col items-center justify-center gap-2 pt-2 text-sm text-muted sm:flex-row sm:gap-6">
-            <a href={`mailto:${contact.email}`} className="flex items-center gap-2 hover:text-cyan-soft">
-              <Icon name="mail" className="text-base text-cyan-dim" />
-              {contact.email}
-            </a>
-            <a href={whatsappLink(c.whatsappText)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-cyan-soft">
-              <Icon name="chat" className="text-base text-cyan-dim" />
-              WhatsApp {contact.whatsappDisplay}
-            </a>
-          </div>
+
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-4 rounded-2xl border border-surface-high/60 bg-surface-lowest/80 p-5 shadow-xl backdrop-blur-xl sm:p-6"
+          >
+            <div className="flex items-center justify-between gap-3 border-b border-surface-high/40 pb-3">
+              <div className="flex items-center gap-3">
+                <Icon name="storefront" className="text-cyan" />
+                <span className="font-display font-semibold text-ink">{f.title}</span>
+              </div>
+              <span className="hidden rounded bg-surface px-2 py-0.5 text-xs font-semibold text-cyan-soft sm:inline">{f.free}</span>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="space-y-1.5">
+                <span className="text-xs font-medium text-muted">{f.name}</span>
+                <input name="name" required autoComplete="name" className={field} placeholder={f.namePlaceholder} />
+              </label>
+              <label className="space-y-1.5">
+                <span className="text-xs font-medium text-muted">{f.email}</span>
+                <input name="email" type="email" required autoComplete="email" className={field} placeholder={f.emailPlaceholder} />
+              </label>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <label className="space-y-1.5">
+                <span className="text-xs font-medium text-muted">{f.business}</span>
+                <input name="business" autoComplete="organization" className={field} placeholder={f.businessPlaceholder} />
+              </label>
+              <label className="space-y-1.5">
+                <span className="text-xs font-medium text-muted">{f.type}</span>
+                <select name="type" className={field} defaultValue={f.types[0]}>
+                  {f.types.map((t) => (
+                    <option key={t}>{t}</option>
+                  ))}
+                </select>
+              </label>
+            </div>
+            <label className="space-y-1.5">
+              <span className="text-xs font-medium text-muted">{f.message}</span>
+              <textarea name="message" required rows={4} className={`${field} resize-y`} placeholder={f.messagePlaceholder} />
+            </label>
+            <button type="submit" className={`${primaryButton} w-full`}>
+              <Icon name="send" className="text-lg" />
+              {f.submit}
+            </button>
+            <p className="text-center text-xs text-outline" aria-live="polite">
+              {sent ? `${f.sent} ${contact.email}.` : f.note}
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -325,7 +403,7 @@ export function LandingPage({ c }: { c: LandingContent }) {
         <Price c={c} />
         <Why c={c} />
         <Faq c={c} />
-        <FinalCta c={c} />
+        <ContactSection c={c} />
       </main>
       <LandingFooter c={c} />
     </>

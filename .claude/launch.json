@@ -4,14 +4,9 @@
     {
       "name": "storeware-web",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "web", "run", "dev", "--", "--port", "5180", "--strictPort"],
-      "port": 5180
-    },
-    {
-      "name": "storeware-web-alt",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "web", "run", "dev", "--", "--port", "5181", "--strictPort"],
-      "port": 5181
+      "runtimeArgs": ["--prefix", "web", "run", "dev"],
+      "port": 5180,
+      "autoPort": true
     }
   ]
 }

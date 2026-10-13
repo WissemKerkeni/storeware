@@ -22,6 +22,8 @@ const pageRoutes: Plugin = {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [pageRoutes, react(), tailwindcss()],
+  // The preview tooling assigns a free port through PORT.
+  server: { port: Number(process.env.PORT) || 5180, strictPort: Boolean(process.env.PORT) },
   build: {
     rollupOptions: {
       // One HTML file per page so each language gets its own title, description and hreflang tags.

@@ -70,7 +70,7 @@ export function Impressum() {
           </Block>
         </div>
       </main>
-      <LandingFooter c={de} />
+      <LandingFooter c={de} base="/de" />
     </>
   )
 }

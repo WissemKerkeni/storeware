@@ -1,6 +1,6 @@
 import { contact, projects } from '../content'
 
-export type Lang = 'fr' | 'de'
+export type Lang = 'en' | 'fr' | 'de'
 
 type Card = { icon: string; title: string; body: string }
 
@@ -49,8 +49,48 @@ export type LandingContent = {
   price: { id: string; eyebrow: string; title: string; from: string; sub: string; points: string[]; cta: string }
   why: { id: string; eyebrow: string; title: string; items: Card[] }
   faq: { id: string; eyebrow: string; title: string; items: { q: string; a: string }[] }
-  final: { id: string; title: string; body: string; whatsapp: string; email: string; emailSubject: string }
-  footer: { tagline: string; location: string; contactTitle: string; languagesTitle: string; legal?: { label: string; href: string }[] }
+  contact: {
+    id: string
+    badge: string
+    title: string
+    body: string
+    whatsapp: string
+    emailSubject: string
+    facts: { icon: string; label: string }[]
+    form: {
+      title: string
+      free: string
+      name: string
+      namePlaceholder: string
+      email: string
+      emailPlaceholder: string
+      business: string
+      businessPlaceholder: string
+      type: string
+      types: string[]
+      message: string
+      messagePlaceholder: string
+      submit: string
+      /** Subject line of the email the form prepares. */
+      subject: string
+      note: string
+      /** Shown after submit, followed by the contact email. */
+      sent: string
+    }
+  }
+  footer: {
+    tagline: string
+    chips: string[]
+    studioTitle: string
+    location: string
+    timezone: string
+    indexTitle: string
+    founderTitle: string
+    founderRole: string
+    languagesTitle: string
+    rights: string
+    legal?: { label: string; href: string }[]
+  }
 }
 
 /** Screenshot and URL come from the shared project list so both sites stay in sync. */
