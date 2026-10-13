@@ -1,10 +1,17 @@
+import { useEffect } from 'react'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { Projects } from './components/Projects'
 import { Engagements, Founder, Process, Services, Stack, Work } from './components/Sections'
 
 export default function App() {
+  // The page renders after the browser's own jump to #hash, so do it once mounted.
+  useEffect(() => {
+    if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'instant' })
+  }, [])
+
   return (
     <>
       <a
@@ -20,6 +27,7 @@ export default function App() {
         <Founder />
         <Stack />
         <Work />
+        <Projects />
         <Process />
         <Engagements />
         <Contact />

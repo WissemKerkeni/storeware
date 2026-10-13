@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storeware - Client Projects Showcase</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            surface: {
+              DEFAULT: '#0f131c',
+              dim: '#0b0e15',
+              card: '#131824',
+              hover: '#192030',
+              border: 'rgba(255, 255, 255, 0.08)'
+            },
+            accent: {
+              cyan: '#00f0ff',
+              violet: '#c0c1ff',
+              emerald: '#10b981'
+            }
+          },
+          fontFamily: {
+            heading: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* Subtle grid background */
+    .bg-grid-pattern {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+
+    /* Glow aura */
+    .glow-cyan-card {
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glow-cyan-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 1rem;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.4), rgba(192, 193, 255, 0.1), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .glow-cyan-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Card hover elevation & subtle tilt feel */
+    .glow-cyan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px -12px rgba(0, 240, 255, 0.15), 0 0 20px -4px rgba(0, 240, 255, 0.1);
+      border-color: rgba(0, 240, 255, 0.4);
+    }
+
+    /* Scroll on hover preview inside mockup frame */
+    .browser-screen-inner {
+      transition: transform 3.8s ease-in-out;
+    }
+    .project-card:hover .browser-screen-inner {
+      transform: translateY(calc(-100% + 220px));
+    }
+    .project-card-featured:hover .browser-screen-inner {
+      transform: translateY(calc(-100% + 250px));
+    }
+
+    /* Staggered entrance animation simulation */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-up {
+      animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+<body class="bg-[#0f131c] text-slate-100 font-body min-h-screen selection:bg-[#00f0ff]/20 selection:text-[#00f0ff]">
+
+  <!-- Outer Container strictly desktop-calibrated 1280px -->
+  <main class="w-full max-w-[1280px] mx-auto px-6 py-16 md:py-24 relative bg-grid-pattern">
+    
+    <!-- Section Transition context indicators (Previous & Next sections marker) -->
+    <div class="mb-12 flex items-center justify-between border-b border-white/5 pb-4 text-xs font-mono text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
+        <span>PREVIOUS: SELECTED ENGINEERING WORK</span>
+      </div>
+      <div class="px-2.5 py-1 rounded bg-white/5 text-[#00f0ff] font-medium border border-[#00f0ff]/20">
+        SECTION: CLIENT PROJECTS
+      </div>
+      <div class="flex items-center gap-2">
+        <span>NEXT: 4-STAGE SPRINT PROCESS</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
+      </div>
+    </div>
+
+    <!-- Section Header & Eyebrow -->
+    <header class="max-w-3xl mb-12 animate-fade-up" style="animation-delay: 50ms;">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#00f0ff]/10 border border-[#00f0ff]/25 text-[#00f0ff] text-xs font-mono font-medium tracking-wide mb-4">
+        <span class="w-2 h-2 rounded-full bg-[#00f0ff] animate-pulse"></span>
+        SHIPPED &amp; LIVE
+      </div>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold font-heading text-white tracking-tight leading-[1.15]">
+        Websites we've launched for <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00f0ff] via-[#9eeeff] to-[#c0c1ff]">real businesses.</span>
+      </h2>
+      <p class="mt-4 text-base md:text-lg text-slate-400 font-normal leading-relaxed">
+        Production applications and high-conversion company websites designed, developed, and deployed with zero fluff. Tested across European and North African markets.
+      </p>
+    </header>
+
+    <!-- Filter Pill Row -->
+    <nav aria-label="Project categories" class="flex flex-wrap items-center gap-2.5 mb-10 animate-fade-up" style="animation-delay: 100ms;">
+      <button 
+        type="button" 
+        data-filter="all" 
+        class="filter-pill active px-4 py-2 rounded-xl text-xs font-mono font-semibold transition-all duration-200 bg-[#00f0ff] text-[#0f131c] shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+        All (6)
+      </button>
+      <button 
+        type="button" 
+        data-filter="websites" 
+        class="filter-pill px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all duration-200 bg-surface-card hover:bg-surface-hover text-slate-300 hover:text-white border border-white/5 hover:border-white/15">
+        Websites
+      </button>
+      <button 
+        type="button" 
+        data-filter="restaurants" 
+        class="filter-pill px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all duration-200 bg-surface-card hover:bg-surface-hover text-slate-300 hover:text-white border border-white/5 hover:border-white/15">
+        Restaurants
+      </button>
+      <button 
+        type="button" 
+        data-filter="automotive" 
+        class="filter-pill px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all duration-200 bg-surface-card hover:bg-surface-hover text-slate-300 hover:text-white border border-white/5 hover:border-white/15">
+        Automotive
+      </button>
+      <button 
+        type="button" 
+        data-filter="platforms" 
+        class="filter-pill px-4 py-2 rounded-xl text-xs font-mono font-medium transition-all duration-200 bg-surface-card hover:bg-surface-hover text-slate-300 hover:text-white border border-white/5 hover:border-white/15">
+        Platforms
+      </button>
+    </nav>
+
+    <!-- Grid of 6 Project Cards: 3 columns, First card larger/featured spanning 2 cols -->
+    <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- ================= 1. Chaari Auto (FEATURED: col-span-2) ================= -->
+      <article 
+        data-category="automotive websites" 
+        class="project-card project-card-featured glow-cyan-card lg:col-span-2 bg-surface-card rounded-2xl border border-surface-border p-6 flex flex-col justify-between overflow-hidden relative group animate-fade-up" 
+        style="animation-delay: 150ms;">
+        <div class="relative z-10">
+          
+          <!-- Browser Window Mockup Frame -->
+          <div class="w-full bg-[#0b0e15] rounded-xl border border-white/10 overflow-hidden shadow-2xl mb-6">
+            <!-- Traffic Light + URL Bar -->
+            <div class="px-4 py-2.5 bg-[#141923] border-b border-white/5 flex items-center justify-between gap-4">
+              <div class="flex items-center gap-1.5 flex-shrink-0">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f56]/80 inline-block"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]/80 inline-block"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#27c93f]/80 inline-block"></span>
+              </div>
+              <div class="flex-1 max-w-md mx-auto bg-[#0a0d14] rounded-md px-3 py-1 flex items-center gap-2 text-[11px] font-mono text-slate-400 border border-white/5">
+                <svg class="w-3 h-3 text-[#10b981] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v2H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-1V6a4 4 0 00-4-4zm2 6V6a2 2 0 10-4 0v2h4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="truncate text-slate-300">https://chaari-auto.com</span>
+              </div>
+              <div class="flex items-center gap-1.5 text-slate-500 text-[10px] font-mono">
+                <span class="hidden sm:inline">LIVE</span>
+                <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+              </div>
+            </div>
+
+            <!-- Scroll-on-hover Website Preview Area -->
+            <div class="h-[250px] w-full overflow-hidden relative bg-[#0d111a] cursor-pointer">
+              <!-- Scrollable inner container -->
+              <div class="browser-screen-inner w-full flex flex-col">
+                <!-- Mock Web Page Content (German/Tunisian Vehicle Export) -->
+                <div class="w-full bg-[#0e1420] p-6 border-b border-white/5">
+                  <div class="flex justify-between items-center pb-4 border-b border-white/5">
+                    <div class="flex items-center gap-2">
+                      <div class="w-7 h-7 rounded bg-[#00f0ff]/20 text-[#00f0ff] font-bold text-xs flex items-center justify-center font-mono">CA</div>
+                      <span class="font-heading font-bold text-sm text-white tracking-wider">CHAARI AUTO</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-[11px] font-mono text-slate-400">
+                      <span class="text-[#00f0ff]">FR / EN</span>
+                      <span class="px-2 py-0.5 rounded bg-white/5 text-slate-300">Stuttgart</span>
+                    </div>
+                  </div>
+                  <div class="pt-6 grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+                    <div>
+                      <span class="text-[10px] font-mono text-[#00f0ff] tracking-widest uppercase">Export Automobile Allemagne &rarr; Tunisie</span>
+                      <h4 class="text-xl font-bold font-heading text-white mt-1 leading-snug">Premium German Vehicle Sourcing &amp; Customs Transit</h4>
+                      <p class="text-xs text-slate-400 mt-2">Direct vehicle procurement from Stuttgart to La Goulette with certified inspection reports and compliant documentation.</p>
+                      <div class="mt-4 flex gap-2">
+                        <span class="px-2.5 py-1 rounded bg-[#00f0ff]/10 text-[#00f0ff] text-[10px] font-mono border border-[#00f0ff]/20">Stock DisponibilitÇ</span>
+                        <span class="px-2.5 py-1 rounded bg-white/5 text-slate-300 text-[10px] font-mono">Calculateur Douane</span>
+                      </div>
+                    </div>
+                    <!-- Visual car cards snippet -->
+                    <div class="grid grid-cols-2 gap-2">
+                      <div class="p-3 rounded-lg bg-[#141b2a] border border-white/5">
+                        <div class="h-16 rounded bg-gradient-to-tr from-slate-800 to-slate-700 flex items-center justify-center text-slate-400 text-[10px] font-mono">Audi Q5 S-Line</div>
+                        <p class="text-[10px] font-mono text-white mt-2 font-semibold">2023 ˙ Export Net</p>
+                        <p class="text-[9px] text-[#00f0ff] font-mono">Stuttgart &rarr; Tunis</p>
+                      </div>
+                      <div class="p-3 rounded-lg bg-[#141b2a] border border-white/5">
+                        <div class="h-16 rounded bg-gradient-to-tr from-slate-800 to-slate-700 flex items-center justify-center text-slate-400 text-[10px] font-mono">BMW X3 xDrive</div>
+                        <p class="text-[10px] font-mono text-white mt-2 font-semibold">2024 ˙ Inspection OK</p>
+                        <p class="text-[9px] text-[#00f0ff] font-mono">Pràt pour expÇdition</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Additional folded fold to demonstrate scrolling -->
+                <div class="w-full bg-[#0a0e17] p-6">
+                  <div class="text-[11px] font-mono text-slate-400 mb-2 uppercase tracking-wider">Processus d'Exportation IntÇgrÇ</div>
+                  <div class="grid grid-cols-3 gap-3">
+                    <div class="p-3 rounded bg-white/5 border border-white/5">
+                      <div class="text-[#00f0ff] font-mono text-xs">01. Sourcing</div>
+                      <div class="text-[10px] text-slate-300 mt-1">SÇlection concessionnaires officiels</div>
+                    </div>
+                    <div class="p-3 rounded bg-white/5 border border-white/5">
+                      <div class="text-[#00f0ff] font-mono text-xs">02. Transit</div>
+                      <div class="text-[10px] text-slate-300 mt-1">Transport assurÇ jusqu'Ö Gànes/Marseille</div>
+                    </div>
+                    <div class="p-3 rounded bg-white/5 border border-white/5">
+                      <div class="text-[#00f0ff] font-mono text-xs">03. DÇdouanement</div>
+                      <div class="text-[10px] text-slate-300 mt-1">Dossier FCR et immatriculation RS</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Hover hint badge -->
+              <div class="absolute bottom-2.5 right-2.5 px-2 py-1 rounded bg-[#0a0d14]/80 backdrop-blur border border-white/10 text-[9px] font-mono text-slate-400 group-hover:opacity-0 transition-opacity flex items-center gap-1">
+                <span>Hover to scroll</span>
+                <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Info Meta -->
+          <div class="flex items-center justify-between gap-3 mb-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-1 rounded-md text-[10px] font-mono font-medium bg-[#00f0ff]/10 text-[#00f0ff] border border-[#00f0ff]/25 uppercase tracking-wider">
+                Automotive &bull; Export
+              </span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-white/5 text-slate-400">
+                Bilingual FR/EN
+              </span>
+            </div>
+            <div class="flex items-center gap-1 text-xs font-mono text-slate-400">
+              <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <span>Stuttgart, Germany</span>
+            </div>
+          </div>
+
+          <h3 class="text-xl md:text-2xl font-bold font-heading text-white tracking-tight group-hover:text-[#00f0ff] transition-colors">
+            Chaari Auto
+          </h3>
+          <p class="text-sm text-slate-400 mt-1.5 leading-relaxed">
+            Car export from Germany to Tunisia and worldwide, bilingual FR/EN site.
+          </p>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+          <span class="text-xs font-mono text-slate-500">chaari-auto.com</span>
+          <a 
+            href="https://chaari-auto.com" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#00f0ff] hover:text-white transition-colors group/link">
+            <span>Visit live site</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+
+      <!-- ================= 2. Techno Pneu ================= -->
+      <article 
+        data-category="automotive websites" 
+        class="project-card glow-cyan-card bg-surface-card rounded-2xl border border-surface-border p-6 flex flex-col justify-between overflow-hidden relative group animate-fade-up" 
+        style="animation-delay: 200ms;">
+        <div class="relative z-10">
+          <!-- Browser Frame -->
+          <div class="w-full bg-[#0b0e15] rounded-xl border border-white/10 overflow-hidden shadow-xl mb-6">
+            <div class="px-3.5 py-2 bg-[#141923] border-b border-white/5 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-1.5 flex-shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#ff5f56]/80"></span>
+                <span class="w-2 h-2 rounded-full bg-[#ffbd2e]/80"></span>
+                <span class="w-2 h-2 rounded-full bg-[#27c93f]/80"></span>
+              </div>
+              <div class="flex-1 bg-[#0a0d14] rounded px-2.5 py-0.5 flex items-center gap-1.5 text-[10px] font-mono text-slate-400 border border-white/5">
+                <span class="truncate text-slate-300">https://techno-pneu.tn</span>
+              </div>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+            </div>
+
+            <!-- Scroll area -->
+            <div class="h-[220px] w-full overflow-hidden relative bg-[#0e131d] cursor-pointer">
+              <div class="browser-screen-inner w-full flex flex-col">
+                <div class="p-5 bg-[#121927] border-b border-white/5">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-heading font-extrabold text-[#00f0ff] tracking-wider">TECHNO PNEU</span>
+                    <span class="text-[9px] font-mono px-1.5 py-0.5 bg-white/5 text-slate-300 rounded">AR / FR / EN</span>
+                  </div>
+                  <div class="p-3 rounded-lg bg-[#0a0e17] border border-white/5">
+                    <span class="text-[9px] font-mono text-[#00f0ff] uppercase">Centre Pneumatique &bull; Teboulba</span>
+                    <p class="text-xs font-semibold text-white mt-1">SpÇcialiste Pneus &amp; Entretien Rapide</p>
+                    <p class="text-[10px] text-slate-400 mt-1">Montage, Çquilibrage, parallÇlisme laser et diagnostic express.</p>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 mt-3">
+                    <div class="p-2 rounded bg-white/5 text-[9px] font-mono text-slate-300 text-center">Michelin &bull; Pirelli</div>
+                    <div class="p-2 rounded bg-white/5 text-[9px] font-mono text-slate-300 text-center">Continental &bull; Hankook</div>
+                  </div>
+                </div>
+                <div class="p-5 bg-[#0a0e17]">
+                  <p class="text-[10px] font-mono text-[#00f0ff]">Stock Disponible &bull; Dimensions Toutes Marques</p>
+                  <p class="text-[9px] text-slate-400 mt-1">Service de rÇservation direct par WhatsApp &amp; devis en ligne instantanÇ.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meta -->
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-[#00f0ff]/10 text-[#00f0ff] border border-[#00f0ff]/20 uppercase">
+              Automotive &bull; Retail
+            </span>
+            <div class="flex items-center gap-1 text-xs font-mono text-slate-400">
+              <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+              <span>Teboulba, TN</span>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold font-heading text-white tracking-tight group-hover:text-[#00f0ff] transition-colors">
+            Techno Pneu
+          </h3>
+          <p class="text-sm text-slate-400 mt-1.5 leading-relaxed">
+            Tire shop website, trilingual EN/FR/AR, Teboulba.
+          </p>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+          <span class="text-xs font-mono text-slate-500">techno-pneu.tn</span>
+          <a 
+            href="https://techno-pneu.tn" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#00f0ff] hover:text-white transition-colors group/link">
+            <span>Visit live site</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </article>
+
+
+      <!-- ================= 3. Di Piu ================= -->
+      <article 
+        data-category="restaurants websites" 
+        class="project-card glow-cyan-card bg-surface-card rounded-2xl border border-surface-border p-6 flex flex-col justify-between overflow-hidden relative group animate-fade-up" 
+        style="animation-delay: 250ms;">
+        <div class="relative z-10">
+          <!-- Browser Frame -->
+          <div class="w-full bg-[#0b0e15] rounded-xl border border-white/10 overflow-hidden shadow-xl mb-6">
+            <div class="px-3.5 py-2 bg-[#141923] border-b border-white/5 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-1.5 flex-shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#ff5f56]/80"></span>
+                <span class="w-2 h-2 rounded-full bg-[#ffbd2e]/80"></span>
+                <span class="w-2 h-2 rounded-full bg-[#27c93f]/80"></span>
+              </div>
+              <div class="flex-1 bg-[#0a0d14] rounded px-2.5 py-0.5 flex items-center gap-1.5 text-[10px] font-mono text-slate-400 border border-white/5">
+                <span class="truncate text-slate-300">di-piu-monastir.vercel.app</span>
+              </div>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+            </div>
+
+            <!-- Scroll area -->
+            <div class="h-[220px] w-full overflow-hidden relative bg-[#131114] cursor-pointer">
+              <div class="browser-screen-inner w-full flex flex-col">
+                <div class="p-5 bg-[#181316] border-b border-white/5">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-heading font-extrabold text-[#c0c1ff] tracking-widest">DI PIU MONASTIR</span>
+                    <span class="text-[9px] font-mono px-1.5 py-0.5 bg-white/5 text-amber-300 rounded">Cucina Italiana</span>
+                  </div>
+                  <div class="p-3.5 rounded-lg bg-[#0e0c10] border border-white/5">
+                    <p class="text-xs font-semibold text-white">Autentica Cucina &amp; Pizzeria Napoletana</p>
+                    <p class="text-[10px] text-slate-400 mt-1">Hand-tossed sourdough pizza, fresh pasta fresca, seaside dining vibe in Monastir.</p>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 mt-3">
+                    <div class="p-2 rounded bg-white/5 text-[9px] font-mono text-slate-300">Interactive Menu</div>
+                    <div class="p-2 rounded bg-white/5 text-[9px] font-mono text-slate-300">Photo Gallery</div>
+                  </div>
+                </div>
+                <div class="p-5 bg-[#0e0c10]">
+                  <p class="text-[10px] font-mono text-[#c0c1ff]">Table Reservations &amp; Delivery</p>
+                  <p class="text-[9px] text-slate-400 mt-1">Direct click-to-WhatsApp booking and seasonal chef specialties.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meta -->
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-[#c0c1ff]/10 text-[#c0c1ff] border border-[#c0c1ff]/20 uppercase">
+              Restaurant &bull; Dining
+            </span>
+            <div class="flex items-center gap-1 text-xs font-mono text-slate-400">
+              <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+              <span>Monastir, TN</span>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold font-heading text-white tracking-tight group-hover:text-[#00f0ff] transition-colors">
+            Di Piu
+          </h3>
+          <p class="text-sm text-slate-400 mt-1.5 leading-relaxed">
+            Italian restaurant website with menu and gallery, Monastir.
+          </p>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+          <span class="text-xs font-mono text-slate-500 truncate mr-2">di-piu-monastir.vercel.app</span>
+          <a 
+            href="https://di-piu-monastir.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#00f0ff] hover:text-white transition-colors group/link flex-shrink-0">
+            <span>Visit live site</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </article>
+
+
+      <!-- ================= 4. Dar Zmen ================= -->
+      <article 
+        data-category="restaurants websites" 
+        class="project-card glow-cyan-card bg-surface-card rounded-2xl border border-surface-border p-6 flex flex-col justify-between overflow-hidden relative group animate-fade-up" 
+        style="animation-delay: 300ms;">
+        <div class="relative z-10">
+          <!-- Browser Frame -->
+          <div class="w-full bg-[#0b0e15] rounded-xl border border-white/10 overflow-hidden shadow-xl mb-6">
+            <div class="px-3.5 py-2 bg-[#141923] border-b border-white/5 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-1.5 flex-shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#ff5f56]/80"></span>
+                <span class="w-2 h-2 rounded-full bg-[#ffbd2e]/80"></span>
+                <span class="w-2 h-2 rounded-full bg-[#27c93f]/80"></span>
+              </div>
+              <div class="flex-1 bg-[#0a0d14] rounded px-2.5 py-0.5 flex items-center gap-1.5 text-[10px] font-mono text-slate-400 border border-white/5">
+                <span class="truncate text-slate-300">dar-zmen-monastir.vercel.app</span>
+              </div>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+            </div>
+
+            <!-- Scroll area -->
+            <div class="h-[220px] w-full overflow-hidden relative bg-[#171410] cursor-pointer">
+              <div class="browser-screen-inner w-full flex flex-col">
+                <div class="p-5 bg-[#1f1914] border-b border-white/5">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-heading font-extrabold text-[#f59e0b] tracking-wider">DAR ZMEN</span>
+                    <span class="text-[9px] font-mono px-1.5 py-0.5 bg-amber-500/10 text-amber-300 rounded border border-amber-500/20">MÇdina de Monastir</span>
+                  </div>
+                  <div class="p-3.5 rounded-lg bg-[#120f0c] border border-white/5">
+                    <p class="text-xs font-semibold text-white">Saveurs Authentiques &amp; Patrimoine Tunisien</p>
+                    <p class="text-[10px] text-slate-400 mt-1">Plats traditionnels au feu de bois, couscous artisanal et ambiance andalouse.</p>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 mt-3">
+                    <div class="p-2 rounded bg-white/5 text-[9px] font-mono text-slate-300">Menu Gastronomique</div>
+                    <div class="p-2 rounded bg-white/5 text-[9px] font-mono text-slate-300">Patio &amp; Galerie</div>
+                  </div>
+                </div>
+                <div class="p-5 bg-[#120f0c]">
+                  <p class="text-[10px] font-mono text-[#f59e0b]">êvÇnements PrivÇs &amp; Accueil Touristique</p>
+                  <p class="text-[9px] text-slate-400 mt-1">RÇservation de tables et privatisation de cour intÇrieure historique.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meta -->
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-amber-500/10 text-amber-300 border border-amber-500/20 uppercase">
+              Heritage &bull; Culinary
+            </span>
+            <div class="flex items-center gap-1 text-xs font-mono text-slate-400">
+              <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+              <span>Monastir Medina, TN</span>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold font-heading text-white tracking-tight group-hover:text-[#00f0ff] transition-colors">
+            Dar Zmen
+          </h3>
+          <p class="text-sm text-slate-400 mt-1.5 leading-relaxed">
+            Traditional Tunisian restaurant in the medina, Monastir.
+          </p>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+          <span class="text-xs font-mono text-slate-500 truncate mr-2">dar-zmen-monastir.vercel.app</span>
+          <a 
+            href="https://dar-zmen-monastir.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#00f0ff] hover:text-white transition-colors group/link flex-shrink-0">
+            <span>Visit live site</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </article>
+
+
+      <!-- ================= 5. Ahmed Auto ================= -->
+      <article 
+        data-category="automotive websites" 
+        class="project-card glow-cyan-card bg-surface-card rounded-2xl border border-surface-border p-6 flex flex-col justify-between overflow-hidden relative group animate-fade-up" 
+        style="animation-delay: 350ms;">
+        <div class="relative z-10">
+          <!-- Browser Frame -->
+          <div class="w-full bg-[#0b0e15] rounded-xl border border-white/10 overflow-hidden shadow-xl mb-6">
+            <div class="px-3.5 py-2 bg-[#141923] border-b border-white/5 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-1.5 flex-shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#ff5f56]/80"></span>
+                <span class="w-2 h-2 rounded-full bg-[#ffbd2e]/80"></span>
+                <span class="w-2 h-2 rounded-full bg-[#27c93f]/80"></span>
+              </div>
+              <div class="flex-1 bg-[#0a0d14] rounded px-2.5 py-0.5 flex items-center gap-1.5 text-[10px] font-mono text-slate-400 border border-white/5">
+                <span class="truncate text-slate-300">ahmed-auto.vercel.app</span>
+              </div>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+            </div>
+
+            <!-- Scroll area -->
+            <div class="h-[220px] w-full overflow-hidden relative bg-[#0d121c] cursor-pointer">
+              <div class="browser-screen-inner w-full flex flex-col">
+                <div class="p-5 bg-[#121927] border-b border-white/5">
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-heading font-extrabold text-[#00f0ff] tracking-wider">AHMED AUTO</span>
+                    <span class="text-[9px] font-mono px-1.5 py-0.5 bg-emerald-500/10 text-emerald-400 rounded">Live Stock Inventory</span>
+                  </div>
+                  <div class="p-3.5 rounded-lg bg-[#0a0e17] border border-white/5">
+                    <p class="text-xs font-semibold text-white">Showroom Voitures RÇcentes &amp; Occasion</p>
+                    <p class="text-[10px] text-slate-400 mt-1">Parc automobile certifiÇ, reprise vÇhicule et financement sur mesure.</p>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 mt-3">
+                    <div class="p-2 rounded bg-white/5 text-[9px] font-mono text-slate-300">Filtre KilomÇtrage</div>
+                    <div class="p-2 rounded bg-white/5 text-[9px] font-mono text-slate-300">Fiche Technique HD</div>
+                  </div>
+                </div>
+                <div class="p-5 bg-[#0a0e17]">
+                  <p class="text-[10px] font-mono text-[#00f0ff]">DisponibilitÇ ImmÇdiate &bull; Essai sur Route</p>
+                  <p class="text-[9px] text-slate-400 mt-1">Contact direct vendeur par WhatsApp avec transmission du dossier administratif.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meta -->
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-[#00f0ff]/10 text-[#00f0ff] border border-[#00f0ff]/20 uppercase">
+              Automotive &bull; Showroom
+            </span>
+            <div class="flex items-center gap-1 text-xs font-mono text-slate-400">
+              <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+              <span>Ksibet El Mediouni, TN</span>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold font-heading text-white tracking-tight group-hover:text-[#00f0ff] transition-colors">
+            Ahmed Auto
+          </h3>
+          <p class="text-sm text-slate-400 mt-1.5 leading-relaxed">
+            Car showroom with live vehicle stock, Ksibet El Mediouni.
+          </p>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+          <span class="text-xs font-mono text-slate-500 truncate mr-2">ahmed-auto.vercel.app</span>
+          <a 
+            href="https://ahmed-auto.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#00f0ff] hover:text-white transition-colors group/link flex-shrink-0">
+            <span>Visit live site</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </article>
+
+
+      <!-- ================= 6. Pizza Phone Admin ================= -->
+      <article 
+        data-category="platforms" 
+        class="project-card glow-cyan-card bg-surface-card rounded-2xl border border-surface-border p-6 flex flex-col justify-between overflow-hidden relative group animate-fade-up" 
+        style="animation-delay: 400ms;">
+        <div class="relative z-10">
+          <!-- Browser Frame -->
+          <div class="w-full bg-[#0b0e15] rounded-xl border border-white/10 overflow-hidden shadow-xl mb-6">
+            <div class="px-3.5 py-2 bg-[#141923] border-b border-white/5 flex items-center justify-between gap-3">
+              <div class="flex items-center gap-1.5 flex-shrink-0">
+                <span class="w-2 h-2 rounded-full bg-[#ff5f56]/80"></span>
+                <span class="w-2 h-2 rounded-full bg-[#ffbd2e]/80"></span>
+                <span class="w-2 h-2 rounded-full bg-[#27c93f]/80"></span>
+              </div>
+              <div class="flex-1 bg-[#0a0d14] rounded px-2.5 py-0.5 flex items-center gap-1.5 text-[10px] font-mono text-slate-400 border border-white/5">
+                <span class="truncate text-slate-300">gohan-admin.vercel.app</span>
+              </div>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span>
+            </div>
+
+            <!-- Scroll area -->
+            <div class="h-[220px] w-full overflow-hidden relative bg-[#0e1422] cursor-pointer">
+              <div class="browser-screen-inner w-full flex flex-col">
+                <div class="p-5 bg-[#131b2e] border-b border-white/5">
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-mono font-bold text-[#00f0ff] uppercase tracking-wider">PIZZA PHONE OPS</span>
+                    <span class="text-[9px] font-mono px-1.5 py-0.5 bg-[#00f0ff]/10 text-[#00f0ff] rounded border border-[#00f0ff]/20">Live Dispatch</span>
+                  </div>
+                  <!-- Admin Modules Pill Grid -->
+                  <div class="grid grid-cols-2 gap-2 mt-2">
+                    <div class="p-2.5 rounded bg-[#0a0e17] border border-white/5">
+                      <div class="text-[9px] font-mono text-slate-400">COMMANDES</div>
+                      <div class="text-xs font-bold text-white mt-0.5 flex items-center justify-between">
+                        <span>Flux Direct</span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      </div>
+                    </div>
+                    <div class="p-2.5 rounded bg-[#0a0e17] border border-white/5">
+                      <div class="text-[9px] font-mono text-slate-400">LIVREURS</div>
+                      <div class="text-xs font-bold text-white mt-0.5 flex items-center justify-between">
+                        <span>Assignation</span>
+                        <span class="text-[9px] font-mono text-[#00f0ff]">GPS</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-2 mt-2">
+                    <div class="p-2 rounded bg-white/5 text-[9px] font-mono text-slate-300">Gestion Carte / Menu</div>
+                    <div class="p-2 rounded bg-white/5 text-[9px] font-mono text-slate-300">Coupons &amp; Promos</div>
+                  </div>
+                </div>
+                <div class="p-5 bg-[#0a0e17]">
+                  <p class="text-[10px] font-mono text-[#00f0ff]">Administration Compläte Multi-Magasins</p>
+                  <p class="text-[9px] text-slate-400 mt-1">Gestion des stocks ingrÇdients, alertes temps de livraison et reporting caisse.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Meta -->
+          <div class="flex items-center justify-between gap-2 mb-2">
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-[#00f0ff]/10 text-[#00f0ff] border border-[#00f0ff]/20 uppercase">
+              Platform &bull; Admin Operations
+            </span>
+            <div class="flex items-center gap-1 text-xs font-mono text-slate-400">
+              <svg class="w-3 h-3 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+              <span>Production Platform</span>
+            </div>
+          </div>
+
+          <h3 class="text-xl font-bold font-heading text-white tracking-tight group-hover:text-[#00f0ff] transition-colors">
+            Pizza Phone Admin
+          </h3>
+          <p class="text-sm text-slate-400 mt-1.5 leading-relaxed">
+            Food ordering admin dashboard: orders, drivers, menu, promotions.
+          </p>
+        </div>
+
+        <div class="pt-5 mt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+          <span class="text-xs font-mono text-slate-500 truncate mr-2">gohan-admin.vercel.app</span>
+          <a 
+            href="https://gohan-admin.vercel.app" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-[#00f0ff] hover:text-white transition-colors group/link flex-shrink-0">
+            <span>Visit live site</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom verification callout -->
+    <div class="mt-12 p-4 rounded-xl bg-surface-card border border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+        <span>All 6 client platforms are deployed and publicly resolvable via their direct links.</span>
+      </div>
+      <div class="text-slate-500 text-[11px]">
+        Ready for insertion between Selected Engineering Work and 4-Stage Sprint Process.
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Interactive JavaScript for Category Filtering and Accessible Motion -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterPills = document.querySelectorAll('.filter-pill');
+      const projectCards = document.querySelectorAll('.project-card');
+
+      filterPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          // Update active button state
+          filterPills.forEach(p => {
+            p.classList.remove('active', 'bg-[#00f0ff]', 'text-[#0f131c]', 'shadow-[0_0_15px_rgba(0,240,255,0.3)]');
+            p.classList.add('bg-surface-card', 'text-slate-300', 'border-white/5');
+          });
+
+          pill.classList.add('active', 'bg-[#00f0ff]', 'text-[#0f131c]', 'shadow-[0_0_15px_rgba(0,240,255,0.3)]');
+          pill.classList.remove('bg-surface-card', 'text-slate-300', 'border-white/5');
+
+          const filterValue = pill.getAttribute('data-filter');
+
+          projectCards.forEach(card => {
+            const cardCategories = card.getAttribute('data-category') || '';
+            if (filterValue === 'all' || cardCategories.includes(filterValue)) {
+              card.style.display = 'flex';
+              card.classList.remove('animate-fade-up');
+              // Force DOM reflow to retrigger animation
+              void card.offsetWidth;
+              card.classList.add('animate-fade-up');
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+

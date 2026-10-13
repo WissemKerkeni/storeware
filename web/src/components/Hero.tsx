@@ -47,9 +47,9 @@ export function Hero() {
               <span>Book a discovery call</span>
               <Icon name="arrow_forward" className="text-lg transition-transform group-hover:translate-x-1" />
             </a>
-            <a href="#work" className={secondaryButton}>
+            <a href="#clients" className={secondaryButton}>
               <Icon name="layers" className="text-base text-cyan-dim" />
-              <span>Explore selected work</span>
+              <span>See client projects</span>
             </a>
             <a
               href="#stack"

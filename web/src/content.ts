@@ -9,6 +9,7 @@ export const contact = {
 
 export const navLinks = [
   { label: 'Services', href: '#services' },
+  { label: 'Clients', href: '#clients' },
   { label: 'Work', href: '#work' },
   { label: 'Stack', href: '#stack' },
   { label: 'Founder', href: '#founder' },
@@ -254,5 +255,108 @@ export const engagements: {
     ],
     cta: 'Discuss availability',
     accent: 'violet',
+  },
+]
+
+export type ProjectFilter = 'all' | 'websites' | 'restaurants' | 'automotive' | 'platforms'
+
+export const projectFilters: { id: ProjectFilter; label: string }[] = [
+  { id: 'all', label: 'All' },
+  { id: 'websites', label: 'Websites' },
+  { id: 'restaurants', label: 'Restaurants' },
+  { id: 'automotive', label: 'Automotive' },
+  { id: 'platforms', label: 'Platforms' },
+]
+
+export const projects: {
+  slug: string
+  name: string
+  url: string
+  categories: ProjectFilter[]
+  chip: string
+  detail: string
+  location: string
+  body: string
+  accent: Accent
+  /** Full-page screenshot in /public/projects, 1200px wide. */
+  image: { src: string; height: number }
+  mobile?: string
+  layout?: 'featured' | 'tall' | 'wide'
+}[] = [
+  {
+    slug: 'chaari-auto',
+    name: 'Chaari Auto',
+    url: 'https://chaari-auto.com/',
+    categories: ['websites', 'automotive'],
+    chip: 'Automotive · Export',
+    detail: 'FR / EN',
+    location: 'Stuttgart, Germany',
+    body: 'Bilingual site for a car exporter shipping vehicles from Europe to Tunisia and worldwide, built around WhatsApp enquiries and Google reviews.',
+    accent: 'cyan',
+    image: { src: '/projects/chaari-auto-full.webp', height: 6000 },
+    mobile: '/projects/chaari-auto-mobile.webp',
+    layout: 'featured',
+  },
+  {
+    slug: 'techno-pneu',
+    name: 'Techno Pneu',
+    url: 'https://techno-pneu.tn/',
+    categories: ['websites', 'automotive'],
+    chip: 'Automotive · Tires',
+    detail: 'EN / FR / AR',
+    location: 'Teboulba, TN',
+    body: 'Trilingual site for a tire, repair and wheel-alignment shop, with services, news and one-tap WhatsApp contact.',
+    accent: 'violet',
+    image: { src: '/projects/techno-pneu-full.webp', height: 4206 },
+    layout: 'tall',
+  },
+  {
+    slug: 'di-piu',
+    name: 'Di Più',
+    url: 'https://di-piu-monastir.vercel.app/',
+    categories: ['websites', 'restaurants'],
+    chip: 'Restaurant · Italian',
+    detail: 'Menu & gallery',
+    location: 'Monastir, TN',
+    body: 'Italian restaurant site with signature dishes, the full menu, gallery, reviews and directions.',
+    accent: 'sky',
+    image: { src: '/projects/di-piu-full.webp', height: 6000 },
+  },
+  {
+    slug: 'dar-zmen',
+    name: 'Dar Zmen',
+    url: 'https://dar-zmen-monastir.vercel.app/',
+    categories: ['websites', 'restaurants'],
+    chip: 'Restaurant · Tunisian',
+    detail: 'Menu & gallery',
+    location: 'Monastir medina, TN',
+    body: 'Traditional Tunisian restaurant in the medina: the printed menu brought online, gallery, FAQ and directions.',
+    accent: 'violet',
+    image: { src: '/projects/dar-zmen-full.webp', height: 6000 },
+  },
+  {
+    slug: 'ahmed-auto',
+    name: 'Ahmed Auto',
+    url: 'https://ahmed-auto.vercel.app/',
+    categories: ['websites', 'automotive'],
+    chip: 'Automotive · Showroom',
+    detail: 'Vehicle stock',
+    location: 'Ksibet El Mediouni, TN',
+    body: 'Showroom site for new and used cars with the published vehicle stock and a simple WhatsApp buying flow.',
+    accent: 'cyan',
+    image: { src: '/projects/ahmed-auto-full.webp', height: 6000 },
+  },
+  {
+    slug: 'pizza-phone-admin',
+    name: 'Pizza Phone Admin',
+    url: 'https://gohan-admin.vercel.app/',
+    categories: ['platforms'],
+    chip: 'Platform · Food ordering',
+    detail: 'FR / EN',
+    location: 'Web app',
+    body: 'Back-office for a food-ordering app: live orders with accept and reject, driver dispatch, menu and promotions management, with a live server connection.',
+    accent: 'sky',
+    image: { src: '/projects/pizza-phone-admin-full.webp', height: 602 },
+    layout: 'wide',
   },
 ]

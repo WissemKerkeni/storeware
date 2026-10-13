@@ -83,6 +83,77 @@
   @apply rounded bg-surface-high px-2.5 py-1 font-mono text-xs font-semibold text-ink;
 }
 
+/* Client project cards: tilt + glow, and screenshots that pan through the live page. */
+.project-card {
+  transform: perspective(1200px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition:
+    transform 0.25s ease-out,
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+.project-card:hover {
+  border-color: rgb(0 240 255 / 0.45);
+  box-shadow:
+    0 0 0 1px rgb(0 240 255 / 0.15),
+    0 20px 60px -20px rgb(0 240 255 / 0.35);
+}
+
+.shot-frame {
+  container-type: size;
+}
+.scroll-shot {
+  translate: 0 0;
+  transition: translate 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: translate;
+}
+.project-card:hover .scroll-shot {
+  translate: 0 calc(-100% + 100cqh);
+  transition-duration: var(--shot-dur, 6s);
+  transition-timing-function: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+.zoom-shot {
+  transition: scale 0.6s ease;
+}
+.project-card:hover .zoom-shot {
+  scale: 1.04;
+}
+.project-card:hover .shot-hint {
+  opacity: 0;
+}
+.shot-hint {
+  transition: opacity 0.3s;
+}
+
+.touch-only {
+  display: none;
+}
+@media (hover: none) {
+  .hover-only {
+    display: none;
+  }
+  .touch-only {
+    display: inline;
+  }
+  /* No hover on touch screens: preview plays by itself once the card is on screen. */
+  .is-visible .scroll-shot {
+    animation: shot-pan var(--shot-dur, 6s) ease-in-out 1.2s infinite alternate;
+  }
+}
+@keyframes shot-pan {
+  to {
+    translate: 0 calc(-100% + 100cqh);
+  }
+}
+
+.phone-float {
+  animation: phone-float 5s ease-in-out infinite;
+}
+@keyframes phone-float {
+  50% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
